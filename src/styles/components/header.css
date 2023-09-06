@@ -1,0 +1,59 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+}
+
+.header.container {
+    padding: 0 20px;
+}
+
+.main-nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-nav ul li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.main-nav ul li a {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.main-nav ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    width: 0;
+    border-radius: 2px;
+    transition: all 200ms ease;
+}
+
+.main-nav ul li a.active:before,
+.main-nav ul li a:hover:before {
+    width: 70%;
+    border: 2px solid var(--orange);
+}
+
+.main-nav ul li a.active:before {
+    border: 2px solid var(--orange);
+}
+
+.main-nav ul li a:not(.active):hover:before {
+    border: 2px solid var(--dark-gray);
+}
+
+.main-nav ul li a:visited {
+    color: var(--text-color);
+}

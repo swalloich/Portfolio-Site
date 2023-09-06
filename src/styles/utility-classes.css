@@ -1,0 +1,3 @@
+.box-shadow-bottom {
+    box-shadow: 0 var(--box-shadow-offset) var(--box-shadow-blur-radius) var(--box-shadow-color);
+}
