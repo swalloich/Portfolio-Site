@@ -29,6 +29,7 @@
     display: flex;
     justify-content: center;
     text-decoration: none;
+    color: var(--text-color);
 }
 
 .main-nav ul li a::before {
