@@ -38,21 +38,22 @@
     bottom: 5%;
     width: 0;
     border-radius: 2px;
-    transition: all 200ms ease;
+    transition: width 200ms ease;
+    transition: border-color 200ms ease;
 }
 
 .main-nav ul li a.active:before,
 .main-nav ul li a:hover:before {
     width: 70%;
-    border: 2px solid var(--orange);
+    border: 2px solid;
 }
 
 .main-nav ul li a.active:before {
-    border: 2px solid var(--orange);
+    border-color: var(--orange);
 }
 
 .main-nav ul li a:not(.active):hover:before {
-    border: 2px solid var(--dark-gray);
+    border-color: var(--dark-gray);
 }
 
 .main-nav ul li a:visited {
