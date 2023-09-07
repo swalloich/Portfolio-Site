@@ -13,3 +13,7 @@
     --box-shadow-offset: 4px;
     --box-shadow-blur-radius: 6px;
 }
+
+body, #root {
+    min-height: 100vh;
+}

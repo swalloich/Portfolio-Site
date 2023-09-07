@@ -4,8 +4,8 @@ export class Home extends React.Component {
     render () {
         return (
             <>
-                <main>
-                    <h1>Home Page</h1>
+                <main className='d-flex'>
+                    <h1 className='mx-auto w-fit-content'>Home Page</h1>
                 </main>
             </>
         )
