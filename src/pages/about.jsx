@@ -5,7 +5,9 @@ export class About extends React.Component {
         return (
             <>
                 <main>
-                    <h1>About Page</h1>
+                    <div className='container'>
+                        <h1>About Page</h1>
+                    </div>
                 </main>
             </>
         )

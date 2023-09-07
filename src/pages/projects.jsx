@@ -5,7 +5,9 @@ export class Projects extends React.Component {
         return (
             <>
                 <main>
-                    <h1>Projects Page</h1>
+                    <div className='container'>
+                        <h1>Projects</h1>
+                    </div>
                 </main>
             </>
         )
