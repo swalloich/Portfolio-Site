@@ -4,9 +4,9 @@ export class Contact extends React.Component {
     render () {
         return (
             <>
-                <main>
+                <main className='d-flex justify-content-center'>
                     <div className="container">
-                        <h1>Contact Page</h1>
+                        <h1>Contact Me!</h1>
                     </div>
                 </main>
             </>
