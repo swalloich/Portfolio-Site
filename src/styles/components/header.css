@@ -11,7 +11,7 @@
     padding: 0 20px;
 }
 
-.main-nav ul {
+.nav-bar ul {
     display: flex;
     align-items: center;
     list-style: none;
@@ -19,11 +19,11 @@
     margin: 0px;
 }
 
-.main-nav ul li:not(:last-child) {
+.nav-bar ul li:not(:last-child) {
     margin-right: 20px;
 }
 
-.main-nav ul li a {
+.nav-bar ul li a {
     padding: 10px;
     position: relative;
     display: flex;
@@ -32,7 +32,7 @@
     color: var(--text-color);
 }
 
-.main-nav ul li a::before {
+.nav-bar ul li a::before {
     content: '';
     position: absolute;
     bottom: 5%;
@@ -41,21 +41,21 @@
     transition: width 200ms ease, border-color 200ms ease;
 }
 
-.main-nav ul li a.active::before,
-.main-nav ul li a:hover::before {
+.nav-bar ul li a.active::before,
+.nav-bar ul li a:hover::before {
     width: 70%;
     border: 2px solid;
 }
 
-.main-nav ul li a.active::before {
+.nav-bar ul li a.active::before {
     border-color: var(--orange);
 }
 
-.main-nav ul li a:not(.active):hover::before {
+.nav-bar ul li a:not(.active):hover::before {
     border-color: var(--dark-gray);
 }
 
-.main-nav ul li a:visited {
+.nav-bar ul li a:visited {
     color: var(--text-color);
 }
 
@@ -71,7 +71,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-    .main-nav {
+    .nav-bar {
         display: flex;
         position: fixed;
         left: 0;
@@ -85,11 +85,11 @@
         align-items: start;
     }
 
-    .main-nav.hidden {
+    .nav-bar.hidden {
         opacity: 0;
     }
 
-    .main-nav ul {
+    .nav-bar ul {
         position: fixed;
         flex-direction: column;
         background-color: white;
@@ -100,16 +100,16 @@
         transition: left 200ms ease;
     }
 
-    .main-nav.hidden ul {
+    .nav-bar.hidden ul {
         left: 100%;
     }
 
-    .main-nav ul li a {
+    .nav-bar ul li a {
         margin: 0 40px 20px 0;
         height: 25px;
     }
 
-    .main-nav ul li:not(:last-child) {
+    .nav-bar ul li:not(:last-child) {
         margin: 0;
     }
 

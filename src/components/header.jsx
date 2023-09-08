@@ -8,8 +8,8 @@ import { About } from '../pages/about';
 import { Contact } from '../pages/contact';
 import { Projects } from '../pages/projects';
 
-// component imports
-import HamburgerButton from "./hamburger-button";
+// components
+import MainNavBar from './main-nav-bar'
 
 // style sheet imports
 import "../styles/utility-classes.css";
@@ -22,10 +22,10 @@ export class Header extends React.Component {
                 <BrowserRouter>
                     <header className='header container box-shadow-bottom'>
                         <div className='logo'>
-                            <h1>Logo Here</h1>
+                            <h1>Jacob Nelson</h1>
                         </div>
                         <div>
-                            <nav className='main-nav hidden' id="main-nav">
+                            <MainNavBar>
                                 <ul>
                                     <li>
                                         <NavLink to='' activeClassName="active">
@@ -48,8 +48,7 @@ export class Header extends React.Component {
                                         </NavLink>
                                     </li>
                                 </ul>
-                            </nav>
-                            <HamburgerButton target="main-nav" />
+                            </MainNavBar>
                         </div>
                     </header>
 
