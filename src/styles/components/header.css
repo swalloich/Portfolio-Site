@@ -11,6 +11,12 @@
     padding: 0 20px;
 }
 
+.header h1 a,
+.header h1 a:active {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
 .nav-bar ul {
     display: flex;
     align-items: center;

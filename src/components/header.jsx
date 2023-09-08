@@ -22,7 +22,7 @@ export class Header extends React.Component {
                 <BrowserRouter>
                     <header className='header container box-shadow-bottom'>
                         <div className='logo'>
-                            <h1>Jacob Nelson</h1>
+                            <h1><NavLink to=''>Jacob Nelson</NavLink></h1>
                         </div>
                         <div>
                             <MainNavBar>
