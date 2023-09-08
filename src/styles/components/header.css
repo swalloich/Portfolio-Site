@@ -75,8 +75,10 @@
         display: flex;
         position: fixed;
         left: 0;
-        top: 0;
+        top: 85px;
         background-color: rgba(0,0,0,0.4);
+        transition: background-color 200ms ease,
+                    opacity 200ms ease;
         height: 100%;
         width: 100%;
         justify-content: end;
@@ -84,15 +86,22 @@
     }
 
     .main-nav.hidden {
-        left: 100%;
+        opacity: 0;
     }
 
     .main-nav ul {
+        position: fixed;
         flex-direction: column;
         background-color: white;
         align-items: end;
         height: 100%;
         width: 50%;
+        left: 50%;
+        transition: left 200ms ease;
+    }
+
+    .main-nav.hidden ul {
+        left: 100%;
     }
 
     .main-nav ul li a {

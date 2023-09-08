@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-function HamburgerButton() {
+function HamburgerButton({ target }) {
     useEffect(() => {
         const buttons = document.querySelectorAll('.toggle-button');
 
@@ -18,21 +18,20 @@ function HamburgerButton() {
     }, []);
 
     function handleClick(event) {
-        const targetId = event.currentTarget.getAttribute('data-target');
-        const target = document.getElementById(targetId);
-        if (target) {
-            if (target.classList.contains('hidden')) {
-                target.classList.remove('hidden');
+        const targetElement = document.getElementById(target);
+        if (targetElement) {
+            if (targetElement.classList.contains('hidden')) {
+                targetElement.classList.remove('hidden');
             } else {
-                target.classList.add('hidden');
+                targetElement.classList.add('hidden');
             }
         } else {
-            console.warn(`Target "${targetId}" not found.`)
+            console.warn(`Target "${target}" not found.`)
         }
     }
 
     return (
-        <div className='nav-hamburger toggle-button' role='button' data-target="main-nav" data-action="toggle-visibility">
+        <div className='nav-hamburger toggle-button' role='button'>
             <FontAwesomeIcon icon={icon({name: 'bars'})} />
         </div>
     );

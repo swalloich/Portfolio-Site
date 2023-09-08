@@ -1,15 +1,19 @@
+// React imports
 import React from 'react';
 import { NavLink, Route, Routes, BrowserRouter } from 'react-router-dom';
 
+// page imports
 import { Home } from '../pages/home';
 import { About } from '../pages/about';
 import { Contact } from '../pages/contact';
-
-import "../styles/utility-classes.css";
-import "../styles/components/header.css";
 import { Projects } from '../pages/projects';
 
+// component imports
 import HamburgerButton from "./hamburger-button";
+
+// style sheet imports
+import "../styles/utility-classes.css";
+import "../styles/components/header.css";
 
 export class Header extends React.Component {
     render () {
@@ -45,7 +49,7 @@ export class Header extends React.Component {
                                     </li>
                                 </ul>
                             </nav>
-                            <HamburgerButton data-target="#main-nav"/>
+                            <HamburgerButton target="main-nav" />
                         </div>
                     </header>
 
