@@ -17,13 +17,29 @@ function HamburgerButton({ target }) {
         }
     }, []);
 
+    function hideNavMenu(ms) {
+        const containerTarget = document.getElementById(target);
+        if (containerTarget) {
+            if (!containerTarget.classList.contains("jn-visually-hidden")) {
+                containerTarget.classList.add("jn-visually-hidden");
+            }
+            setTimeout(() => {
+                if (!containerTarget.classList.contains("jn-hidden")) {
+                    containerTarget.classList.add("jn-hidden");
+                }
+            }, ms); 
+        }
+    }
+
     function handleClick(event) {
         const targetElement = document.getElementById(target);
         if (targetElement) {
-            if (targetElement.classList.contains('hidden')) {
-                targetElement.classList.remove('hidden');
+            if (targetElement.classList.contains('jn-visually-hidden') ||
+                targetElement.classList.contains('jn-hidden')) {
+                targetElement.classList.remove('jn-hidden');
+                targetElement.classList.remove("jn-visually-hidden");
             } else {
-                targetElement.classList.add('hidden');
+                hideNavMenu(200);
             }
         } else {
             console.warn(`Target "${target}" not found.`)

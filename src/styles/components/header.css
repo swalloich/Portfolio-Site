@@ -85,7 +85,11 @@
         align-items: start;
     }
 
-    .nav-bar.hidden {
+    .nav-bar.jn-hidden {
+        display: none;
+    }
+
+    .nav-bar.jn-visually-hidden {
         opacity: 0;
     }
 
@@ -100,7 +104,7 @@
         transition: left 200ms ease;
     }
 
-    .nav-bar.hidden ul {
+    .nav-bar.jn-visually-hidden ul {
         left: 100%;
     }
 
