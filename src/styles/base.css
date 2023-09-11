@@ -12,10 +12,17 @@
     /* shadow variables */
     --box-shadow-offset: 4px;
     --box-shadow-blur-radius: 6px;
+
+    /* size variables */
+    --header-height: 85px;
 }
 
 body, #root {
     min-height: 100vh;
+}
+
+main {
+    min-height: calc(100vh - var(--header-height));
 }
 
 main .container {
@@ -37,18 +44,21 @@ main .container {
 
 @media only screen and (max-width: 1000px) {
     main .container {
-        max-width: 600px;
+        width: 550px;
+        max-width: 550px;
     }
 }
 
 @media only screen and (max-width: 600px) {
     main .container {
-        max-width: 400px;
+        width: 350px;
+        max-width: 350px;
     }
 }
 
 @media only screen and (max-width: 400px) {
     main .container {
+        width: 300px;
         max-width: 300px;
     }
 }
