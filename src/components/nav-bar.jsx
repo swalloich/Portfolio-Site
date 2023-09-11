@@ -4,7 +4,10 @@ import React, { useEffect } from "react";
 import HamburgerButton from "./hamburger-button";
 import { toggleHamburgerIcon } from "./hamburger-button";
 
-function MainNavBar({ navBarId, children }) {
+// css imports
+import "../styles/components/nav-bar.css";
+
+function NavBar({ navBarId, children }) {
     useEffect(() => {
         const navContainer = document.getElementById("main-nav");
         navContainer.addEventListener("click", handleOutsideClick);
@@ -42,4 +45,6 @@ function MainNavBar({ navBarId, children }) {
     )
 }
 
-export default MainNavBar;
+// TODO: move showNavMenu and closeNavMenu here then export them to be used in other files.
+
+export default NavBar;

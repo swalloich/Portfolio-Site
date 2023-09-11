@@ -9,7 +9,7 @@ import { Contact } from '../pages/contact';
 import { Projects } from '../pages/projects';
 
 // components
-import MainNavBar from './main-nav-bar'
+import NavBar from './nav-bar'
 import CloseNavLink from './close-nav-link';
 
 // style sheet imports
@@ -26,7 +26,7 @@ export class Header extends React.Component {
                             <h1><NavLink to=''>Jacob Nelson</NavLink></h1>
                         </div>
                         <div>
-                            <MainNavBar navBarId="main-nav">
+                            <NavBar navBarId="main-nav">
                                 <ul>
                                     <CloseNavLink target="main-nav">
                                         <NavLink to='' activeClassName="active">
@@ -49,7 +49,7 @@ export class Header extends React.Component {
                                         </NavLink>
                                     </CloseNavLink>
                                 </ul>
-                            </MainNavBar>
+                            </NavBar>
                         </div>
                     </header>
 

@@ -1,0 +1,95 @@
+.nav-bar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-bar ul li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.nav-bar ul li a {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.nav-bar ul li a::before {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    width: 0;
+    border-radius: 2px;
+    transition: width 200ms ease, border-color 200ms ease;
+}
+
+.nav-bar ul li a.active::before,
+.nav-bar ul li a:hover::before {
+    width: 70%;
+    border: 2px solid;
+}
+
+.nav-bar ul li a.active::before {
+    border-color: var(--orange);
+}
+
+.nav-bar ul li a:not(.active):hover::before {
+    border-color: var(--dark-gray);
+}
+
+.nav-bar ul li a:visited {
+    color: var(--text-color);
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: 85px;
+        background-color: rgba(0,0,0,0.4);
+        transition: background-color 200ms ease,
+                    opacity 200ms ease;
+        height: 100%;
+        width: 100%;
+        justify-content: end;
+        align-items: start;
+    }
+
+    .nav-bar.jn-hidden {
+        display: none;
+    }
+
+    .nav-bar.jn-visually-hidden {
+        opacity: 0;
+    }
+
+    .nav-bar ul {
+        position: fixed;
+        flex-direction: column;
+        background-color: white;
+        align-items: end;
+        height: 100%;
+        width: 50%;
+        left: 50%;
+        transition: left 200ms ease;
+    }
+
+    .nav-bar.jn-visually-hidden ul {
+        left: 100%;
+    }
+
+    .nav-bar ul li a {
+        margin: 0 40px 20px 0;
+        height: 25px;
+    }
+
+    .nav-bar ul li:not(:last-child) {
+        margin: 0;
+    }
+}

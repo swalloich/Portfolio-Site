@@ -4,7 +4,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 import "../styles/components/nav-hamburger.css";
 
-export default function HamburgerButton({ hamburgerId, target }) {
+export default function HamburgerButton({ target }) {
     useEffect(() => {
         const buttons = document.querySelectorAll('.toggle-button');
 
