@@ -1,0 +1,48 @@
+import React, { useEffect } from "react";
+
+function CloseNavLink({ target, children }) {
+    useEffect (() => {
+        // add listener
+        const closeItems = document.querySelectorAll(".closeNav");
+
+        closeItems.forEach((item) => {
+            item.addEventListener('click', handleClick);
+        });
+
+        function handleClick(event) {
+            const clickTarget = document.getElementById(target);
+            if (clickTarget && !clickTarget.firstChild.classList.contains("active")) {
+                hideNavMenu(clickTarget, 200);
+            }
+        }
+
+        function hideNavMenu(clickTarget, ms) {
+            if (clickTarget) {
+                if (!clickTarget.classList.contains("jn-visually-hidden")) {
+                    clickTarget.classList.add("jn-visually-hidden");
+                }
+                setTimeout(() => {
+                    if (!clickTarget.classList.contains("jn-hidden")) {
+                        clickTarget.classList.add("jn-hidden");
+                    }
+                }, ms);
+            }
+        }
+
+        return () => {
+            closeItems.forEach((item) => {
+                item.removeEventListener('click', handleClick);
+            })
+        }
+    });
+
+    return (
+        <>
+            <li className="closeNav">
+                { children }
+            </li>
+        </>
+    );
+}
+
+export default CloseNavLink;

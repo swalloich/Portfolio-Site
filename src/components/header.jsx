@@ -10,6 +10,7 @@ import { Projects } from '../pages/projects';
 
 // components
 import MainNavBar from './main-nav-bar'
+import CloseNavLink from './close-nav-link';
 
 // style sheet imports
 import "../styles/utility-classes.css";
@@ -25,28 +26,28 @@ export class Header extends React.Component {
                             <h1><NavLink to=''>Jacob Nelson</NavLink></h1>
                         </div>
                         <div>
-                            <MainNavBar>
+                            <MainNavBar navBarId="main-nav">
                                 <ul>
-                                    <li>
+                                    <CloseNavLink target="main-nav">
                                         <NavLink to='' activeClassName="active">
                                             Home
                                         </NavLink>
-                                    </li>
-                                    <li>
+                                    </CloseNavLink>
+                                    <CloseNavLink target="main-nav">
                                         <NavLink to='about' activeClassName="active">
                                             About
                                         </NavLink>
-                                    </li>
-                                    <li>
+                                    </CloseNavLink>
+                                    <CloseNavLink target="main-nav">
                                         <NavLink to='projects' activeClassName="active">
                                             Projects
                                         </NavLink>
-                                    </li>
-                                    <li>
+                                    </CloseNavLink>
+                                    <CloseNavLink target="main-nav">
                                         <NavLink to='contact' activeClassName="active">
                                             Contact
                                         </NavLink>
-                                    </li>
+                                    </CloseNavLink>
                                 </ul>
                             </MainNavBar>
                         </div>

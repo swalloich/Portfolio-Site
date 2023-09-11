@@ -17,17 +17,29 @@ function HamburgerButton({ target }) {
         }
     }, []);
 
-    function hideNavMenu(ms) {
-        const containerTarget = document.getElementById(target);
-        if (containerTarget) {
-            if (!containerTarget.classList.contains("jn-visually-hidden")) {
-                containerTarget.classList.add("jn-visually-hidden");
+    function hideNavMenu(clickTarget, ms) {
+        if (clickTarget) {
+            if (!clickTarget.classList.contains("jn-visually-hidden")) {
+                clickTarget.classList.add("jn-visually-hidden");
             }
             setTimeout(() => {
-                if (!containerTarget.classList.contains("jn-hidden")) {
-                    containerTarget.classList.add("jn-hidden");
+                if (!clickTarget.classList.contains("jn-hidden")) {
+                    clickTarget.classList.add("jn-hidden");
                 }
             }, ms); 
+        }
+    }
+
+    function showNavMenu(clickTarget, ms) {
+        if (clickTarget) {
+            if (clickTarget.classList.contains('jn-hidden')) {
+                clickTarget.classList.remove('jn-hidden');
+            }
+            setTimeout(() => {
+                if (clickTarget.classList.contains('jn-visually-hidden')) {
+                    clickTarget.classList.remove('jn-visually-hidden');
+                }
+            }, ms);
         }
     }
 
@@ -36,10 +48,9 @@ function HamburgerButton({ target }) {
         if (targetElement) {
             if (targetElement.classList.contains('jn-visually-hidden') ||
                 targetElement.classList.contains('jn-hidden')) {
-                targetElement.classList.remove('jn-hidden');
-                targetElement.classList.remove("jn-visually-hidden");
+                showNavMenu(targetElement, 5);
             } else {
-                hideNavMenu(200);
+                hideNavMenu(targetElement, 200);
             }
         } else {
             console.warn(`Target "${target}" not found.`)

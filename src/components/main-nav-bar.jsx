@@ -3,10 +3,14 @@ import React, { useEffect } from "react";
 // component imports
 import HamburgerButton from "./hamburger-button";
 
-function MainNavBar({ children }) {
+function MainNavBar({ navBarId, children }) {
     useEffect(() => {
         const navContainer = document.getElementById("main-nav");
         navContainer.addEventListener("click", handleOutsideClick);
+
+        return () => {
+            navContainer.removeEventListener("click", handleOutsideClick);
+        }
     })
 
     function hideNavMenu(target, ms) {
@@ -28,7 +32,7 @@ function MainNavBar({ children }) {
 
     return (
         <>
-            <nav className="nav-bar jn-hidden jn-visually-hidden" id="main-nav">
+            <nav className="nav-bar jn-hidden jn-visually-hidden" id={navBarId}>
                 { children }
             </nav>
             <HamburgerButton target="main-nav" />
