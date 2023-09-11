@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { toggleHamburgerIcon } from "./hamburger-button";
 
 function CloseNavLink({ target, children }) {
     useEffect (() => {
@@ -13,6 +14,7 @@ function CloseNavLink({ target, children }) {
             const clickTarget = document.getElementById(target);
             if (clickTarget && !clickTarget.firstChild.classList.contains("active")) {
                 hideNavMenu(clickTarget, 200);
+                toggleHamburgerIcon(target);
             }
         }
 

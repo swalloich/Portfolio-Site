@@ -2,7 +2,9 @@ import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-function HamburgerButton({ target }) {
+import "../styles/components/nav-hamburger.css";
+
+export default function HamburgerButton({ hamburgerId, target }) {
     useEffect(() => {
         const buttons = document.querySelectorAll('.toggle-button');
 
@@ -43,6 +45,24 @@ function HamburgerButton({ target }) {
         }
     }
 
+    function internalToggleHamburgerIcon (clicked) {
+        const hamburgers = document.querySelectorAll('.nav-hamburger');
+        hamburgers.forEach((hamburger) => {
+            const hamburgerChildren = hamburger.childNodes;
+            if (hamburger === clicked || hamburger.contains(clicked)) {
+                hamburgerChildren.forEach((child) => {
+                    if (child.classList.contains('d-none')) {
+                        child.classList.remove('d-none');
+                        child.classList.add('d-block');
+                    } else if (child.classList.contains('d-block')) {
+                        child.classList.remove('d-block');
+                        child.classList.add('d-none');
+                    }
+                });
+            }
+        });
+    }
+
     function handleClick(event) {
         const targetElement = document.getElementById(target);
         if (targetElement) {
@@ -52,16 +72,33 @@ function HamburgerButton({ target }) {
             } else {
                 hideNavMenu(targetElement, 200);
             }
+            internalToggleHamburgerIcon(event.target);
         } else {
             console.warn(`Target "${target}" not found.`)
         }
     }
 
     return (
-        <div className='nav-hamburger toggle-button' role='button'>
-            <FontAwesomeIcon icon={icon({name: 'bars'})} />
+        <div id={ target + "-hamburger" } className='nav-hamburger toggle-button' role='button'>
+            <div class="d-block">
+                <FontAwesomeIcon icon={icon({name: 'bars'})} />
+            </div>
+            <div class="d-none">
+                <FontAwesomeIcon icon={icon({name: 'xmark'})} />
+            </div>
         </div>
     );
 }
 
-export default HamburgerButton;
+export function toggleHamburgerIcon(hamburgerTarget) {
+    const hamburgerElem = document.getElementById(hamburgerTarget + '-hamburger');
+    hamburgerElem.childNodes.forEach((child) => {
+        if (child.classList.contains('d-none')) {
+            child.classList.remove('d-none');
+            child.classList.add('d-block');
+        } else if (child.classList.contains('d-block')) {
+            child.classList.remove('d-block');
+            child.classList.add('d-none');
+        }
+    });
+}

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 // component imports
 import HamburgerButton from "./hamburger-button";
+import { toggleHamburgerIcon } from "./hamburger-button";
 
 function MainNavBar({ navBarId, children }) {
     useEffect(() => {
@@ -28,6 +29,7 @@ function MainNavBar({ navBarId, children }) {
 
     function handleOutsideClick(event) {
         hideNavMenu(event.target, 200);
+        toggleHamburgerIcon(navBarId);
     }
 
     return (

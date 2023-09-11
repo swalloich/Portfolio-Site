@@ -65,17 +65,6 @@
     color: var(--text-color);
 }
 
-.nav-hamburger {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.75rem;
-    height: 40px;
-    width: 40px;
-    border: 1px solid var(--light-gray);
-    border-radius: 5px;
-}
-
 @media only screen and (max-width: 600px) {
     .nav-bar {
         display: flex;
@@ -121,9 +110,5 @@
 
     .nav-bar ul li:not(:last-child) {
         margin: 0;
-    }
-
-    .nav-hamburger {
-        display: flex;
     }
 }
