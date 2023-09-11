@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+
+// component imports
 import { toggleHamburgerIcon } from "./hamburger-button";
 
 function CloseNavLink({ target, children }) {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-// component imports
+// component and utility function imports
 import HamburgerButton from "./hamburger-button";
 import { toggleHamburgerIcon } from "./hamburger-button";
 

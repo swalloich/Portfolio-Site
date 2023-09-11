@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
+
+// FontAwesome imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
+// css imports
 import "../styles/components/nav-hamburger.css";
 
 export default function HamburgerButton({ target }) {
