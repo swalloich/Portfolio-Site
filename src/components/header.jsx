@@ -7,6 +7,7 @@ import { Home } from '../pages/home';
 import { About } from '../pages/about';
 import { Contact } from '../pages/contact';
 import { Projects } from '../pages/projects';
+import { NotFound } from '../pages/not-found';
 
 // components
 import NavBar from './nav-bar'
@@ -58,6 +59,7 @@ export class Header extends React.Component {
                         <Route path='/about' element={ <About /> } />
                         <Route path='/projects' element={ <Projects /> } />
                         <Route path='/contact' element={ <Contact /> } />
+                        <Route path="*" element={ <NotFound /> } />
                     </Routes>
                 </BrowserRouter>
             </>

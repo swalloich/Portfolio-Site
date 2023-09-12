@@ -51,7 +51,7 @@
         display: flex;
         position: fixed;
         left: 0;
-        top: 85px;
+        top: var(--header-height);
         background-color: rgba(0,0,0,0.4);
         transition: background-color 200ms ease,
                     opacity 200ms ease;

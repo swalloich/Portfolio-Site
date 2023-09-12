@@ -5,3 +5,19 @@
 .w-fit-content {
     width: fit-content;
 }
+
+.jn-font-light-gray {
+    color: var(--light-gray);
+}
+
+.jn-font-xxl {
+    font-size: 10em;
+}
+
+.jn-font-xl {
+    font-size: 5em;
+}
+
+.jn-font-l {
+    font-size: 2.5em;
+}
