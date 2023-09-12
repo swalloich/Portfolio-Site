@@ -2,14 +2,27 @@
     box-shadow: 0 var(--box-shadow-offset) var(--box-shadow-blur-radius) var(--box-shadow-color);
 }
 
+/* Size */
 .w-fit-content {
     width: fit-content;
 }
 
+/* Border radius */
+.border-r-10 {
+    border-radius: 10px;
+}
+
+/* Background color */
+.jn-bg-pop-blue {
+    background-color: var(--pop-blue);
+}
+
+/* Font color */
 .jn-font-light-gray {
     color: var(--light-gray);
 }
 
+/* Font size */
 .jn-font-xxl {
     font-size: 10em;
 }

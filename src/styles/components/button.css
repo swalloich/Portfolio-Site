@@ -1,0 +1,16 @@
+.button {
+    --button-padding-x: 20px;
+    --button-padding-y: 5px;
+
+    display: flex;
+    align-items: center;
+    padding: var(--button-padding-y) var(--button-padding-x);
+    box-sizing: border-box;
+    min-width: 100px;
+    width: fit-content;
+    height: 50px;
+}
+
+.button.jn-bg-pop-blue {
+    color: var(--light-gray);
+}
