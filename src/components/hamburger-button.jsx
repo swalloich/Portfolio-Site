@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // FontAwesome imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,21 +7,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 // css imports
 import "../styles/components/nav-hamburger.css";
 
-export default function HamburgerButton({ target }) {
-    useEffect(() => {
-        const buttons = document.querySelectorAll('.toggle-button');
-
-        buttons.forEach((button) => {
-            button.addEventListener('click', handleClick)
-        });
-
-        return () => {
-            buttons.forEach((button) => {
-                button.removeEventListener('click', handleClick);
-            })
-        }
-    }, []);
-
+export function HamburgerButton(props) {
     function hideNavMenu(clickTarget, ms) {
         if (clickTarget) {
             if (!clickTarget.classList.contains("jn-visually-hidden")) {
@@ -67,7 +53,7 @@ export default function HamburgerButton({ target }) {
     }
 
     function handleClick(event) {
-        const targetElement = document.getElementById(target);
+        const targetElement = document.getElementById(props.target);
         if (targetElement) {
             if (targetElement.classList.contains('jn-visually-hidden') ||
                 targetElement.classList.contains('jn-hidden')) {
@@ -77,16 +63,16 @@ export default function HamburgerButton({ target }) {
             }
             internalToggleHamburgerIcon(event.target);
         } else {
-            console.warn(`Target "${target}" not found.`)
+            console.warn(`Target "${props.target}" not found.`)
         }
     }
 
     return (
-        <div id={ target + "-hamburger" } className='nav-hamburger toggle-button' role='button'>
-            <div class="d-block">
+        <div id={ props.target + "-hamburger" } className='nav-hamburger toggle-button' role='button' onClick={handleClick}>
+            <div className="d-block">
                 <FontAwesomeIcon icon={icon({name: 'bars'})} />
             </div>
-            <div class="d-none">
+            <div className="d-none">
                 <FontAwesomeIcon icon={icon({name: 'xmark'})} />
             </div>
         </div>

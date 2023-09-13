@@ -12,10 +12,10 @@ export class Resume extends React.Component {
                 <main className='d-flex justify-content-center'>
                     <div className='container'>
                         <h1>My Resume</h1>
-                        <Button 
+                        <Button
                             src="https://drive.google.com/file/d/1KvgVqopRqyh68754UuyNixVOWiG_jN9j/"
                             action={ "download" }
-                            className={"jn-bg-pop-blue"}>
+                            className={"jn-bg-pop-blue mb-3"}>
                             Download <FontAwesomeIcon className='ms-1' icon={icon({name: 'download'})}/>
                         </Button>
                         <iframe

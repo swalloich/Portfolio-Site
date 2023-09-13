@@ -2,11 +2,11 @@
     font-family: Arial, Helvetica, sans-serif;
 
     /* Color Variables */
-    --orange: orange;
+    --orange: #EB8D36;
     --light-gray: lightgray;
     --gray: gray;
     --dark-gray: dimgray;
-    --pop-blue: blue;
+    --pop-blue: #2A5EEB;
     --text-color: black;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
 

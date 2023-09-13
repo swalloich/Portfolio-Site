@@ -30,22 +30,22 @@ export class Header extends React.Component {
                             <NavBar navBarId="main-nav">
                                 <ul>
                                     <CloseNavLink target="main-nav">
-                                        <NavLink to='' activeClassName="active">
+                                        <NavLink to='' activeclassname="active">
                                             Home
                                         </NavLink>
                                     </CloseNavLink>
                                     <CloseNavLink target="main-nav">
-                                        <NavLink to='about' activeClassName="active">
+                                        <NavLink to='about' activeclassname="active">
                                             About
                                         </NavLink>
                                     </CloseNavLink>
                                     <CloseNavLink target="main-nav">
-                                        <NavLink to='projects' activeClassName="active">
+                                        <NavLink to='projects' activeclassname="active">
                                             Projects
                                         </NavLink>
                                     </CloseNavLink>
                                     <CloseNavLink target="main-nav">
-                                        <NavLink to='resume' activeClassName="active">
+                                        <NavLink to='resume' activeclassname="active">
                                             Resume
                                         </NavLink>
                                     </CloseNavLink>

@@ -1,49 +1,34 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 // component imports
 import { toggleHamburgerIcon } from "./hamburger-button";
 
-function CloseNavLink({ target, children }) {
-    useEffect (() => {
-        // add listener
-        const closeItems = document.querySelectorAll(".closeNav");
-
-        closeItems.forEach((item) => {
-            item.addEventListener('click', handleClick);
-        });
-
-        function handleClick(event) {
-            const clickTarget = document.getElementById(target);
-            if (clickTarget && !clickTarget.firstChild.classList.contains("active")) {
-                hideNavMenu(clickTarget, 200);
-                toggleHamburgerIcon(target);
-            }
+function CloseNavLink(props) {
+    function handleClick(event) {
+        const clickTarget = document.getElementById(props.target);
+        if (clickTarget && !clickTarget.firstChild.classList.contains("active")) {
+            hideNavMenu(clickTarget, 200);
+            toggleHamburgerIcon(props.target);
         }
+    }
 
-        function hideNavMenu(clickTarget, ms) {
-            if (clickTarget) {
-                if (!clickTarget.classList.contains("jn-visually-hidden")) {
-                    clickTarget.classList.add("jn-visually-hidden");
+    function hideNavMenu(clickTarget, ms) {
+        if (clickTarget) {
+            if (!clickTarget.classList.contains("jn-visually-hidden")) {
+                clickTarget.classList.add("jn-visually-hidden");
+            }
+            setTimeout(() => {
+                if (!clickTarget.classList.contains("jn-hidden")) {
+                    clickTarget.classList.add("jn-hidden");
                 }
-                setTimeout(() => {
-                    if (!clickTarget.classList.contains("jn-hidden")) {
-                        clickTarget.classList.add("jn-hidden");
-                    }
-                }, ms);
-            }
+            }, ms);
         }
-
-        return () => {
-            closeItems.forEach((item) => {
-                item.removeEventListener('click', handleClick);
-            })
-        }
-    });
+    }
 
     return (
         <>
-            <li className="closeNav">
-                { children }
+            <li className="closeNav" onClick={handleClick}>
+                { props.children }
             </li>
         </>
     );

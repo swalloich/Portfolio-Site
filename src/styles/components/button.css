@@ -9,6 +9,8 @@
     min-width: 100px;
     width: fit-content;
     height: 50px;
+    cursor: pointer;
+    border: none;
 }
 
 .button.jn-bg-pop-blue {
