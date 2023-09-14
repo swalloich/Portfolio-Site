@@ -4,9 +4,9 @@ import { NavLink, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // page imports
 import { Home } from '../pages/home';
-import { Resume } from '../pages/resume';
 import { About } from '../pages/about';
 import { Projects } from '../pages/projects';
+import { Contact } from '../pages/contact';
 import { NotFound } from '../pages/not-found';
 
 // components
@@ -20,9 +20,9 @@ import "../styles/components/header.css";
 export class Header extends React.Component {
     render () {
         return (
-            <>
-                <BrowserRouter>
-                    <header className='header container box-shadow-bottom'>
+            <BrowserRouter>
+                <header className='header box-shadow-bottom'>
+                    <div className='jn-container'>
                         <div className='logo'>
                             <h1><NavLink to=''>Jacob Nelson</NavLink></h1>
                         </div>
@@ -45,24 +45,24 @@ export class Header extends React.Component {
                                         </NavLink>
                                     </CloseNavLink>
                                     <CloseNavLink target="main-nav">
-                                        <NavLink to='resume' activeclassname="active">
-                                            Resume
+                                        <NavLink to='contact' activeclassname="active">
+                                            Contact
                                         </NavLink>
                                     </CloseNavLink>
                                 </ul>
                             </NavBar>
                         </div>
-                    </header>
+                    </div>
+                </header>
 
-                    <Routes>
-                        <Route path='/' element={ <Home /> } />
-                        <Route path='/about' element={ <About /> } />
-                        <Route path='/projects' element={ <Projects /> } />
-                        <Route path='/resume' element={ <Resume /> } />
-                        <Route path="*" element={ <NotFound /> } />
-                    </Routes>
-                </BrowserRouter>
-            </>
+                <Routes>
+                    <Route path='/' element={ <Home /> } />
+                    <Route path='/about' element={ <About /> } />
+                    <Route path='/projects' element={ <Projects /> } />
+                    <Route path='/contact' element={ <Contact /> } />
+                    <Route path="*" element={ <NotFound /> } />
+                </Routes>
+            </BrowserRouter>
         );
     }
 }
