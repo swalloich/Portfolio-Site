@@ -47,8 +47,13 @@ export class Contact extends React.Component {
                             </div>
                         </div>
                         <h2>Where can I be reached?</h2>
-                        <h3>Social Media</h3>
-                        <div className='d-flex justify-content-around'>
+                        <div className='mx-auto col-12 col-md-10'>
+                            <div className='row'>
+                                <div className='col-3'>Email:</div>
+                                <div className='col-9'><a href="mailto:nels.jac42@gmail.com">nels.jac42@gmail.com</a></div>
+                            </div>
+                        </div>
+                        <div className='my-3 d-flex justify-content-around'>
                             <a href='https://linkedin.com/in/nelsjac42' target='_blank' rel='noreferrer'>
                                 <FontAwesomeIcon className='jn-font-xl' icon={icon({name: 'linkedin', style: 'brands'})} />
                             </a>

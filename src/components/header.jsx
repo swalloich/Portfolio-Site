@@ -3,7 +3,6 @@ import React from 'react';
 import { NavLink, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // page imports
-import { Home } from '../pages/home';
 import { About } from '../pages/about';
 import { Projects } from '../pages/projects';
 import { Contact } from '../pages/contact';
@@ -35,11 +34,6 @@ export class Header extends React.Component {
                                         </NavLink>
                                     </CloseNavLink>
                                     <CloseNavLink target="main-nav">
-                                        <NavLink to='about' activeclassname="active">
-                                            About
-                                        </NavLink>
-                                    </CloseNavLink>
-                                    <CloseNavLink target="main-nav">
                                         <NavLink to='projects' activeclassname="active">
                                             Projects
                                         </NavLink>
@@ -56,8 +50,7 @@ export class Header extends React.Component {
                 </header>
 
                 <Routes>
-                    <Route path='/' element={ <Home /> } />
-                    <Route path='/about' element={ <About /> } />
+                    <Route path='/' element={ <About /> } />
                     <Route path='/projects' element={ <Projects /> } />
                     <Route path='/contact' element={ <Contact /> } />
                     <Route path="*" element={ <NotFound /> } />
