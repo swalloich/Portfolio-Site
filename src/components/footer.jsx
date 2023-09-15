@@ -6,8 +6,8 @@ export class Footer extends React.Component {
     render () {
         return (
             <>
-                <footer className="footer d-flex justify-content-center">
-                    <div className="container">
+                <footer className="footer d-flex justify-content-center mt-5">
+                    <div className="jn-container">
                         Footer goes here!
                     </div>
                 </footer>

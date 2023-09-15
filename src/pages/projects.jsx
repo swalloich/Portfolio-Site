@@ -5,7 +5,7 @@ export class Projects extends React.Component {
         return (
             <>
                 <main className='d-flex justify-content-center'>
-                    <div className='container'>
+                    <div className='jn-container'>
                         <h1>Projects</h1>
                     </div>
                 </main>

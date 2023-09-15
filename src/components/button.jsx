@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 // style sheets
 import "../styles/components/button.css"
@@ -6,7 +6,7 @@ import "../styles/utility-classes.css";
 
 export function Button(props) {
     const handleDownload = () => {
-        console.log("Insert downloading noises here.");
+        window.location = props.src;
     }
 
     const handleRedirect = () => {

@@ -5,7 +5,7 @@ export class Home extends React.Component {
         return (
             <>
                 <main className='d-flex justify-content-center'>
-                    <div className='container'>
+                    <div className='jn-container'>
                         <h1>Home Page</h1>
                     </div>
                 </main>

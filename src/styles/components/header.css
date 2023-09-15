@@ -1,5 +1,12 @@
 .header {
     display: flex;
+    justify-content: center;
+}
+
+.header > .jn-container {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: white;
@@ -8,12 +15,38 @@
     top: 0;
 }
 
-.header.container {
-    padding: 0 20px;
-}
-
 .header h1 a,
 .header h1 a:active {
     color: var(--text-color);
     text-decoration: none;
+}
+
+@media only screen and (max-width: 1800px) {
+    .header > .jn-container {
+        max-width: 1600px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .header > .jn-container {
+        max-width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .header > .jn-container {
+        max-width: 900px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .header > .jn-container {
+        max-width: 800px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .header > .jn-container {
+        max-width: 450px;
+    }
 }

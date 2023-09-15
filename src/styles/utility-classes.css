@@ -34,3 +34,12 @@
 .jn-font-l {
     font-size: 2.5em;
 }
+
+.jn-font-m {
+    font-size: 1.85em;
+}
+
+/* Lists */
+.jn-no-bullets {
+    list-style-type: none;
+}

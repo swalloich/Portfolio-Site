@@ -16,3 +16,7 @@
 .button.jn-bg-pop-blue {
     color: var(--light-gray);
 }
+
+.button.jn-bg-pop-blue:active {
+    background-color: var(--dark-blue);
+}
