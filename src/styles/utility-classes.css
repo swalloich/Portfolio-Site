@@ -22,6 +22,18 @@
     color: var(--light-gray);
 }
 
+.jn-font-dark-gray {
+    color: var(--dark-gray);
+}
+
+.jn-font-github-gray {
+    color: var(--github-gray);
+}
+
+.jn-font-linkedin-blue {
+    color: var(--linkedin-blue);
+}
+
 .jn-font-pop-blue {
     color: var(--pop-blue);
 }

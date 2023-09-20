@@ -1,7 +1,7 @@
 :root {
     font-family: Arial, Helvetica, sans-serif;
 
-    /* Color Variables */
+    /* Site Colors */
     --orange: #EB8D36;
     --light-gray: lightgray;
     --gray: gray;
@@ -10,6 +10,10 @@
     --dark-blue: #15399E;
     --text-color: black;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* Logo Colors */
+    --github-gray: #24292F;
+    --linkedin-blue: #0077B5;
 
     /* shadow variables */
     --box-shadow-offset: 4px;
