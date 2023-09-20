@@ -22,6 +22,10 @@
     color: var(--light-gray);
 }
 
+.jn-font-pop-blue {
+    color: var(--pop-blue);
+}
+
 /* Font size */
 .jn-font-xxl {
     font-size: 10em;
