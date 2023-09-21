@@ -5,7 +5,8 @@
     font-size: 1.75rem;
     height: 40px;
     width: 40px;
-    border: 1px solid var(--light-gray);
+    border: 2px solid var(--super-light-blue);
+    color: var(--super-light-blue);
     border-radius: 5px;
 }
 

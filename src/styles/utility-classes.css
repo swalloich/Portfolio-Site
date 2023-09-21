@@ -22,8 +22,8 @@
 }
 
 /* Font color */
-.jn-font-light-gray {
-    color: var(--light-gray);
+.jn-font-sl-blue {
+    color: var(--super-light-blue);
 }
 
 .jn-font-dark-gray {

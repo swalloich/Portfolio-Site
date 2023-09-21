@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Tag } from "../components/tag";
+
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 
 export class Projects extends React.Component {
@@ -9,6 +11,7 @@ export class Projects extends React.Component {
                 <main className='d-flex justify-content-center'>
                     <div className='jn-container'>
                         <h1>Projects</h1>
+                        <Tag>Text</Tag>
                         <div>
                             <h2 className='mb-0'>This Site</h2>
                             <div className='row d-flex justify-content-center'>

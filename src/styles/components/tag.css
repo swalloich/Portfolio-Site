@@ -1,0 +1,12 @@
+.tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 7px;
+    border: 2px solid var(--super-light-blue);
+    width: fit-content;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 14px;
+    background-color: var(--super-light-blue-t);
+}

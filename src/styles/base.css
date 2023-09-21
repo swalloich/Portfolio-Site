@@ -3,11 +3,12 @@
 
     /* Site Colors */
     --orange: #FF9C00;
-    --light-gray: lightgray;
     --gray: #666;
     --dark-gray: #333;
     --bg-gray: #272D33;
     --extra-light-blue: #60686e;
+    --super-light-blue: rgb(171, 183, 192);
+    --super-light-blue-t: rgba(171,183,192,0.25);
     --light-blue: #8AC8FF;
     --pop-blue: #0086FF;
     --dark-blue: #005EB3;
