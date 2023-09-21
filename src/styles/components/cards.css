@@ -1,0 +1,13 @@
+.big-card {
+    padding: 20px;
+    border: 2px solid var(--super-light-blue);
+    border-radius: 20px;
+}
+
+.big-card h2 {
+    margin-top: 0;
+}
+
+.big-card :last-child {
+    margin-bottom: 0;
+}

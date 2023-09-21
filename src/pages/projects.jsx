@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Tag } from "../components/tag";
 
+import "../styles/components/cards.css";
+
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 
 export class Projects extends React.Component {
@@ -114,6 +116,17 @@ export class Projects extends React.Component {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div className='big-card'>
+                            <h2>Card Title</h2>
+                            <p>
+                                Wow there are a lot of useless words here. I bet you're wondering what their
+                                purpose is. Well I have bad news for you. I don't have an answer. Could it
+                                be filler? Possibly. Perhaps there is something more meaningful here. Don't
+                                believe me? What do you think was going through the mind of the first person
+                                do drink cow's milk? Probably nothing sane. See that was kinda meaningful.
+                                No? Alright, maybe it wasn't.
+                            </p>
                         </div>
                     </div>
                 </main>
