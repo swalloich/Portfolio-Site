@@ -2,13 +2,18 @@
     font-family: Arial, Helvetica, sans-serif;
 
     /* Site Colors */
-    --orange: #EB8D36;
+    --orange: #FF9C00;
     --light-gray: lightgray;
-    --gray: gray;
-    --dark-gray: dimgray;
-    --pop-blue: #2A5EEB;
-    --dark-blue: #15399E;
-    --text-color: black;
+    --gray: #666;
+    --dark-gray: #333;
+    --bg-gray: #272D33;
+    --extra-light-blue: #60686e;
+    --light-blue: #8AC8FF;
+    --pop-blue: #0086FF;
+    --dark-blue: #005EB3;
+    --almost-black: #000f1b;
+
+    --text-color: #FFFAFA;
     --box-shadow-color: rgba(0, 0, 0, 0.1);
 
     /* Logo Colors */
@@ -25,6 +30,8 @@
 
 body, #root {
     min-height: 100vh;
+    background-color: var(--bg-gray);
+    color: var(--text-color)
 }
 
 main {

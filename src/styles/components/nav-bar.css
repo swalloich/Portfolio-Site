@@ -1,3 +1,7 @@
+.logo.divider-right + .nav-bar {
+    margin-left: 26px;
+}
+
 .nav-bar ul {
     display: flex;
     align-items: center;
@@ -17,8 +21,16 @@
     justify-content: center;
     text-decoration: none;
     color: var(--text-color);
+    font-weight: 600;
+    font-size: 16px;
 }
 
+.nav-bar ul li a.active {
+    color: var(--pop-blue)
+}
+
+/*
+Old underline bar
 .nav-bar ul li a::before {
     content: '';
     position: absolute;
@@ -40,9 +52,9 @@
 
 .nav-bar ul li a:not(.active):hover::before {
     border-color: var(--dark-gray);
-}
+}*/
 
-.nav-bar ul li a:visited {
+.nav-bar ul li a:visited:not(.active) {
     color: var(--text-color);
 }
 
@@ -61,6 +73,10 @@
         align-items: start;
     }
 
+    .logo.divider-right + .nav-bar {
+        margin-left: 0;
+    }
+
     .nav-bar.jn-hidden {
         display: none;
     }
@@ -72,7 +88,7 @@
     .nav-bar ul {
         position: fixed;
         flex-direction: column;
-        background-color: white;
+        background-color: var(--bg-gray);
         align-items: end;
         height: 100%;
         width: 50%;

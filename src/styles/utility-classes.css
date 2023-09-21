@@ -1,3 +1,7 @@
+.box-shadow-top {
+    box-shadow: 0 calc(-1 * var(--box-shadow-offset)) var(--box-shadow-blur-radius) var(--box-shadow-color);
+}
+
 .box-shadow-bottom {
     box-shadow: 0 var(--box-shadow-offset) var(--box-shadow-blur-radius) var(--box-shadow-color);
 }
@@ -58,4 +62,21 @@
 /* Lists */
 .jn-no-bullets {
     list-style-type: none;
+} 
+
+/* dividers */
+
+.divider-right {
+    position: relative;
+    padding-right: 30px;
+}
+
+.divider-right::after {
+    position: absolute;
+    content: '';
+    height: 70%;
+    top: 15%;
+    right: 0;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 1px;
 }

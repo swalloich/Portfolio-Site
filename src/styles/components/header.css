@@ -7,12 +7,15 @@
     width: 100%;
     max-width: 1400px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: var(--not-quite-black);
     position: sticky;
     height: var(--header-height);
     top: 0;
+}
+
+.header .logo img {
+    max-height: calc(var(--header-height) - 20px);
 }
 
 .header h1 a,
@@ -42,6 +45,7 @@
 @media only screen and (max-width: 900px) {
     .header > .jn-container {
         max-width: unset;
-        padding: 20px 40px;
+        padding: 0 40px;
+        justify-content: space-between;
     }
 }
