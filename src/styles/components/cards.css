@@ -1,13 +1,21 @@
-.big-card {
+.big-card, .small-card {
     padding: 20px;
     border: 2px solid var(--super-light-blue);
     border-radius: 20px;
+    box-sizing: border-box;
+    height: fit-content;
 }
 
-.big-card h2 {
+.small-card {
+    max-width: calc(50% - var(--gap-width));
+}
+
+.big-card h2,
+.small-card h2 {
     margin-top: 0;
 }
 
-.big-card :last-child {
+.big-card :last-child,
+.small-card :last-child {
     margin-bottom: 0;
 }

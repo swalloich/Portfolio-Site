@@ -63,7 +63,7 @@ export class Contact extends React.Component {
                             <div className='row mb-3'>
                                 <div className='col-3 d-flex align-items-center'>GitHub:</div>
                                 <div className='col-9'>
-                                    <a className='jn-font-github-gray' href="https://github.com/swalloich" target='_blank' rel='noreferrer'>
+                                    <a className='jn-font-github-logo-color' href="https://github.com/swalloich" target='_blank' rel='noreferrer'>
                                         <FontAwesomeIcon className='jn-font-xl' icon={icon({name: 'github', style: 'brands'})} />
                                     </a>
                                 </div>

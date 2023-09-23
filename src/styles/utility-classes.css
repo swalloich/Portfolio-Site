@@ -30,8 +30,8 @@
     color: var(--dark-gray);
 }
 
-.jn-font-github-gray {
-    color: var(--github-gray);
+.jn-font-github-logo-color {
+    color: var(--github-logo-color);
 }
 
 .jn-font-linkedin-blue {
@@ -79,4 +79,21 @@
     right: 0;
     border: 1px solid rgba(0,0,0,0.1);
     border-radius: 1px;
+}
+
+/* Gutter Containers */
+
+.gutter-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-gap-xsm {
+    --gap-width: 5px;
+    gap: var(--gap-width);
+}
+
+.flex-gap-md {
+    --gap-width: 20px;
+    gap: var(--gap-width);
 }

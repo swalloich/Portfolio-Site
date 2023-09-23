@@ -18,7 +18,7 @@
     --box-shadow-color: rgba(0, 0, 0, 0.1);
 
     /* Logo Colors */
-    --github-gray: #24292F;
+    --github-logo-color: white;
     --linkedin-blue: #0077B5;
 
     /* shadow variables */
@@ -27,6 +27,7 @@
 
     /* size variables */
     --header-height: 85px;
+    --gap-width: 10px;
 }
 
 body, #root {
