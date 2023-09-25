@@ -1,21 +1,117 @@
-.big-card, .small-card {
+.quarter-card,
+.half-card,
+.full-card {
     padding: 20px;
     border: 2px solid var(--super-light-blue);
     border-radius: 20px;
     box-sizing: border-box;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-.small-card {
-    max-width: calc(50% - var(--gap-width));
-}
-
-.big-card h2,
-.small-card h2 {
+.quarter-card h2,
+.half-card h2,
+.full-card h2 {
     margin-top: 0;
 }
 
-.big-card :last-child,
-.small-card :last-child {
+.quarter-card :last-child,
+.half-card :last-child
+.full-card :last-child {
     margin-bottom: 0;
+}
+
+.quarter-card .card-body
+.half-card .card-body
+.full-card .card-body {
+    flex: 2;
+}
+
+.quarter-card {
+    max-width: calc(25% - var(--gap-width));
+}
+
+.half-card {
+    max-width: calc(50% - var(--gap-width));
+}
+
+.full-card {
+    max-width: 100%;
+}
+
+/* sm card */
+
+@media only screen and (min-width: 576px) {
+    .quarter-card-sm {
+        max-width: calc(25% - var(--gap-width));
+    }
+
+    .half-card-sm {
+        max-width: calc(50% - var(--gap-width));
+    }
+
+    .full-card-sm {
+        max-width: 100%;
+    }
+}
+
+/* md card */
+@media only screen and (min-width: 768px) {
+    .quarter-card-md {
+        max-width: calc(25% - var(--gap-width));
+    }
+
+    .half-card-md {
+        max-width: calc(50% - var(--gap-width));
+    }
+
+    .full-card-mda {
+        max-width: 100%;
+    }
+}
+
+/* lg card */
+@media only screen and (min-width: 992px) {
+    .quarter-card-lg {
+        max-width: calc(25% - var(--gap-width));
+    }
+
+    .half-card-lg {
+        max-width: calc(50% - var(--gap-width));
+    }
+
+    .full-card-lg {
+        max-width: 100%;
+    }
+}
+
+/* xl card */
+@media only screen and (min-width: 1200px) {
+    .quarter-card-xl {
+        max-width: calc(25% - var(--gap-width));
+    }
+
+    .half-card-xl {
+        max-width: calc(50% - var(--gap-width));
+    }
+
+    .full-card-xl {
+        max-width: 100%;
+    }
+}
+
+/* xxl card */
+@media only screen and (min-width: 1400px) {
+    .quarter-card-sm {
+        max-width: calc(25% - var(--gap-width));
+    }
+
+    .half-card-sm {
+        max-width: calc(50% - var(--gap-width));
+    }
+
+    .full-card-sm {
+        max-width: 100%;
+    }
 }

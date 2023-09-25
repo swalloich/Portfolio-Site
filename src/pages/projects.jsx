@@ -14,15 +14,17 @@ export class Projects extends React.Component {
                     <div className='jn-container'>
                         <h1>Projects</h1>
                         <div className='gutter-container flex-gap-md flex-direction-column flex-direction-md-row'>
-                            <div className='small-card'>
+                            <div className='full-card half-card-md'>
                                 <h2 className='mb-0'>This Site</h2>
-                                <h4 className='mb-0'>Description</h4>
-                                <p>
-                                    Aside from react itself, and the bootstrap utility classes,
-                                    this site was made from scratch by me. This includes the
-                                    setup of the Oracle Cloud instance it is hosted on, writing
-                                    the css for the header and the rest of the page, and so on.
-                                </p>
+                                <div className='card-body'>
+                                    <h4 className='mb-0'>Description</h4>
+                                    <p>
+                                        Aside from react itself, and the bootstrap utility classes,
+                                        this site was made from scratch by me. This includes the
+                                        setup of the Oracle Cloud instance it is hosted on, writing
+                                        the css for the header and the rest of the page, and so on.
+                                    </p>
+                                </div>
                                 <h4>Skills & Technologies Used</h4>
                                 <div className='gutter-container flex-gap-xsm'>
                                     <Tag>React</Tag>
@@ -33,7 +35,7 @@ export class Projects extends React.Component {
                                     <Tag>Git</Tag>
                                 </div>
                             </div>
-                            <div className='small-card'>
+                            <div className='full-card half-card-md'>
                                 <h2 className='mb-0'>CSS Cleanup</h2>
                                 <div className='row d-flex justify-content-center'>
                                     <div className='row'>
@@ -75,7 +77,7 @@ export class Projects extends React.Component {
                                     <Tag>Git</Tag>
                                 </div>
                             </div>
-                            <div className='small-card'>
+                            <div className='full-card half-card-md'>
                                 <h2 className='mb-0'>McKay School Directory</h2>
                                 <div className='row'>
                                     <div className='col-11 col-md-12 overflow-hidden'>
