@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    width: 100%;
 }
 
 .quarter-card h2,
@@ -22,8 +23,8 @@
     margin-bottom: 0;
 }
 
-.quarter-card .card-body
-.half-card .card-body
+.quarter-card .card-body,
+.half-card .card-body,
 .full-card .card-body {
     flex: 2;
 }

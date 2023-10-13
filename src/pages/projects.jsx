@@ -18,11 +18,9 @@ export class Projects extends React.Component {
                                 <h2 className='mb-0'>This Site</h2>
                                 <div className='card-body'>
                                     <h4 className='mb-0'>Description</h4>
-                                    <p>
-                                        Aside from react itself, and the bootstrap utility classes,
-                                        this site was made from scratch by me. This includes the
-                                        setup of the Oracle Cloud instance it is hosted on, writing
-                                        the css for the header and the rest of the page, and so on.
+                                    <p className='mt-0'>
+                                        This website was designed and built by me. I developed
+                                        everything short of the
                                     </p>
                                 </div>
                                 <h4>Skills & Technologies Used</h4>
@@ -33,23 +31,16 @@ export class Projects extends React.Component {
                                     <Tag>JavaScript</Tag>
                                     <Tag>Oracle Cloud</Tag>
                                     <Tag>Git</Tag>
+                                    <Tag>Responsive Design</Tag>
                                 </div>
                             </div>
                             <div className='full-card half-card-md'>
                                 <h2 className='mb-0'>CSS Cleanup</h2>
-                                <div className='row d-flex justify-content-center'>
-                                    <div className='row'>
-                                        <div className='col-12 col-lg-6 overflow-hidden'>
-                                            <h4 className='mb-0'>Source</h4>
-                                            <a className='jn-font-pop-blue mt-1' href="https://education.byu.edu/" target='_blank' rel='noreferrer'>education.byu.edu</a>
-                                        </div>
-                                        <div className='col-12 col-lg-6'>
-                                            <h4 className='mb-0'>As of</h4>
-                                            <p className='mt-1'>19 September 2023</p>
-                                        </div>
-                                    </div>
+                                <div className='card-body'>
+                                    <h4 className='mb-0'>Source</h4>
+                                    <a className='jn-font-pop-blue mt-1' href="https://education.byu.edu/" target='_blank' rel='noreferrer'>education.byu.edu</a>
                                     <h4 className='mb-0'>Description</h4>
-                                    <p>
+                                    <p className='mt-0'>
                                         Our team determined that our site was suffering in two ways
                                         because of the way out style sheets were structured. These were:
                                     </p>
@@ -66,7 +57,7 @@ export class Projects extends React.Component {
                                         faster than before.
                                     </p>
                                 </div>
-                                <h4>Skills & Technologies Used</h4>
+                                <h4 className='mb-2'>Skills & Technologies Used</h4>
                                 <div className='gutter-container flex-gap-xsm'>
                                     <Tag>SASS</Tag>
                                     <Tag>node.js</Tag>
@@ -75,28 +66,61 @@ export class Projects extends React.Component {
                                     <Tag>Bootstrap 5</Tag>
                                     <Tag>Drupal</Tag>
                                     <Tag>Git</Tag>
+                                    <Tag>Twig</Tag>
                                 </div>
                             </div>
                             <div className='full-card half-card-md'>
-                                <h2 className='mb-0'>McKay School Directory</h2>
-                                <div className='row'>
-                                    <div className='col-11 col-md-12 overflow-hidden'>
-                                        <h4 className='mb-0'>Source</h4>
-                                        <a className='jn-font-pop-blue mt-1' href="https://education.byu.edu/directory" target='_blank' rel='noreferrer'>McKay School Directory</a>
-                                    </div>
+                                <h2 >McKay School Directory</h2>
+                                <div className='card-body'>
+                                    <h4 className='my-0'>Source</h4>
+                                    <a className='jn-font-pop-blue mt-1' href="https://education.byu.edu/directory" target='_blank' rel='noreferrer'>McKay School Directory</a>
+                                    <h4 className='mb-0'>Description</h4>
+                                    <p className='mt-0'>
+                                        The site's directory page worked fine on desktop, but was
+                                        near impossible to use on mobile devices. The original was
+                                        a table automatically generated by Drupal. I crafted a new
+                                        directory page using divs and Bootstrap that responded to
+                                        view width, making it usable both on desktop and mobile.
+                                    </p>
                                 </div>
-                                <h4 className='mb-0'>Description</h4>
-                                <p>
-                                    The site's directory page worked fine on desktop, but was
-                                    near impossible to use on mobile devices. The original was
-                                    a table automatically generated by Drupal. I crafted a new
-                                    directory page using divs and Bootstrap that responded to
-                                    view width, making it usable both on desktop and mobile.
-                                </p>
-                                <h4>Skills and Technologies Used</h4>
+                                <h4 className='mb-2'>Skills and Technologies Used</h4>
                                 <div className='gutter-container flex-gap-xsm'>
                                     <Tag>Bootstrap 5</Tag>
                                     <Tag>Drupal</Tag>
+                                    <Tag>Twig</Tag>
+                                    <Tag>Responsive Design</Tag>
+                                </div>
+                            </div>
+                            <div className='full-card half-card-md'>
+                                <h2>Speech & Language Clinic</h2>
+                                <div className='card-body'>
+                                    <h4 className='my-0'>Source</h4>
+                                    <a className='jn-font-pop-blue mt-1 d-block' href='https://education.byu.edu/speech-and-language-clinic' target='_blank' rel='noreferrer'>Speech & Language Clinic</a>
+                                    <ul className='mt-0'>
+                                        <li>
+                                            <a className='jn-font-pop-blue ms-3 d-block' href="https://education.byu.edu/speech-and-language-clinic/apply" target='_blank' rel='noreferrer'>/apply</a>
+                                        </li>
+                                        <li>
+                                            <a className='jn-font-pop-blue ms-3 d-block' href="https://education.byu.edu/speech-and-language-clinic/about" target='_blank' rel='noreferrer'>/about</a>
+                                        </li>
+                                        <li>
+                                            <a className='jn-font-pop-blue ms-3 d-block' href='https://education.byu.edu/speech-and-language-clinic/resources'>/resources</a>
+                                        </li>
+                                    </ul>
+                                    <h4 className='mb-0'>Description</h4>
+                                    <p className='mt-0'>
+                                        I Constructed a series of pages from screenshots provided
+                                        by our UX team. I implemented responsive design techniques
+                                        to ensure an optimal experience on both desktop and mobile
+                                        platforms.
+                                    </p>
+                                </div>
+                                <h4 className='mb-2'>Skills and Technologies Used</h4>
+                                <div className='gutter-container flex-gap-xsm'>
+                                    <Tag>Bootstrap 5</Tag>
+                                    <Tag>CSS</Tag>
+                                    <Tag>HTML 5</Tag>
+                                    <Tag>Responsive Design</Tag>
                                 </div>
                             </div>
                         </div>
