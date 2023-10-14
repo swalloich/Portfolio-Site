@@ -19,8 +19,13 @@ export class Projects extends React.Component {
                                 <div className='card-body'>
                                     <h4 className='mb-0'>Description</h4>
                                     <p className='mt-0'>
-                                        This website was designed and built by me. I developed
-                                        everything short of the
+                                        This website was designed, built, and deployed by me.
+                                        Bootstrap was used to make building a site that is
+                                        responsive easier. React was used to build it, so that I
+                                        could take advantage of templating. This site is hosted on
+                                        an Oracle Cloud always free teir instance that is managed
+                                        by me as well.
+                                        
                                     </p>
                                 </div>
                                 <h4>Skills & Technologies Used</h4>
