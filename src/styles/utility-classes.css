@@ -35,11 +35,11 @@
 }
 
 .jn-font-github-logo-color {
-    color: var(--github-logo-color);
+    color: var(--github-logo-color) !important;
 }
 
 .jn-font-linkedin-blue {
-    color: var(--linkedin-blue);
+    color: var(--linkedin-blue) !important;
 }
 
 .jn-font-pop-blue {
