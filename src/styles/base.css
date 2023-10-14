@@ -33,7 +33,11 @@
 body, #root {
     min-height: 100vh;
     background-color: var(--bg-gray);
-    color: var(--text-color)
+    color: var(--text-color);
+}
+
+#root:not(h1, h2, h3, h4, h5) {
+    font-size: 1.25rem;
 }
 
 main {
@@ -61,6 +65,7 @@ a:link, a:visited {
     text-decoration: none;
 }
 
+/* media queries */
 @media only screen and (max-width: 1800px) {
     main>.jn-container {
         max-width: 900px;

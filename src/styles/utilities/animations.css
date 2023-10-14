@@ -1,0 +1,32 @@
+/* slide in */
+
+@keyframes slide-from-right {
+    from {
+        transform: translateX(80%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        transform: translateX(100px);
+        transform: translateY(600px);
+        opacity: 0;
+    } to {
+        transform: translateX(0);
+        transform: translateY(0);
+        opacity: 100%;
+    }
+}
+
+.jn-anim-slide-from-right {
+    animation-duration: 1s;
+    animation-name: slide-from-right;
+}
+
+.jn-anim-fade-in {
+    animation: fade-in 1s;
+    animation-delay: 1.5s;
+}
