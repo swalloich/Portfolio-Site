@@ -7,7 +7,7 @@ import headshot from "../images/jacob_headshot.jpg"
 
 import "../styles/utilities/animations.css"
 
-export class About extends React.Component {
+export class Home extends React.Component {
     render () {
         return (
             <>

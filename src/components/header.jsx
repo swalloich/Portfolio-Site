@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // page imports
-import { About } from '../pages/about';
+import { Home } from '../pages/home';
 import { Projects } from '../pages/projects';
 import { Contact } from '../pages/contact';
 import { NotFound } from '../pages/not-found';
@@ -52,7 +52,7 @@ export class Header extends React.Component {
                 </header>
 
                 <Routes>
-                    <Route path='/' element={ <About /> } />
+                    <Route path='/' element={ <Home /> } />
                     <Route path='/projects' element={ <Projects /> } />
                     <Route path='/contact' element={ <Contact /> } />
                     <Route path="*" element={ <NotFound /> } />
