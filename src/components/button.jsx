@@ -4,31 +4,27 @@ import React from "react";
 import "../styles/components/button.css"
 import "../styles/utility-classes.css";
 
-export function Button(props) {
-    const handleDownload = () => {
-        window.location = props.src;
+export class Button extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            mutableClasses: [],
+        }
     }
 
-    const handleRedirect = () => {
-        console.log("Insert redirecting noises here");
+    get classList() {
+        let list = 'button ';
+        // uncomment the line below if mutableClasses starts being used.
+        //list += ` ${this.state.mutableClasses.join(' ')}`;
+        if (this.props.className) { list += ` ${this.props.className}`; }
+        return list;
     }
 
-    switch (props.action) {
-        case "download":
-            return (
-                <button
-                    className={ props.className + " button border-r-10" }
-                    onClick={handleDownload}>
-                    { props.children }
-                </button>
-            );
-        case "redirect":
-            return (
-                <button
-                    className={ props.className + " button border-r-10" }
-                    onClick={handleRedirect}>
-                    { props.children }
-                </button>
-            );
+    render() {
+        return (
+            <a href={ this.props.href } onClick={this.props.onClick} className={this.classList}>
+                { this.props.children }
+            </a>
+        );
     }
 }

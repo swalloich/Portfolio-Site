@@ -11,12 +11,13 @@
     height: 50px;
     cursor: pointer;
     border: none;
-}
-
-.button.jn-bg-pop-blue {
-    color: var(--super-light-blue);
+    user-select: none;
 }
 
 .button.jn-bg-pop-blue:active {
     background-color: var(--dark-blue);
+}
+
+a.button, a.button:visited {
+    color: var(--text-color);
 }

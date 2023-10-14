@@ -8,6 +8,11 @@ export class FadeIn extends React.Component {
         this.state = {
             mutableClasses: ["jn-opacity-0"],
         }
+        if (this.props.delay) {
+            this.delay = this.props.delay;
+        } else {
+            this.delay = 1000;
+        }
     }
 
     #removeClass(className) {
@@ -28,7 +33,7 @@ export class FadeIn extends React.Component {
     get classList() {
         let list = 'jn-anim-fade-in';
         list += ` ${this.state.mutableClasses.join(' ')}`;
-        list += ` ${this.props.className}`;
+        if (this.props.className) { list += ` ${this.props.className}`; }
         return list;
     }
 
@@ -38,7 +43,7 @@ export class FadeIn extends React.Component {
                 this.#addClass('jn-opacity-100');
                 this.#removeClass('jn-opacity-0');
             }
-        }, 1000);
+        }, this.delay);
     }
 
     render() {

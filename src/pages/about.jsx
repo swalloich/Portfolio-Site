@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
 
 import { FadeIn } from "../components/fade-in"
+import { Button } from '../components/button'
 
 import headshot from "../images/jacob_headshot.jpg"
 
@@ -18,9 +19,14 @@ export class About extends React.Component {
                         </div>
                     </div>
                     <div className="jn-container">
-                        <FadeIn className='row jn-font-l jn-font-xl-lg'>
+                        <FadeIn className='row jn-font-l jn-font-xl-lg' delay={1000}>
                             <div>Need a website?</div>
-                            <div></div>
+                        </FadeIn>
+                        <FadeIn className='row jn-font-l jn-font-xl-lg mt-5' delay={2000}>
+                            <div>Check out my work.</div>
+                        </FadeIn>
+                        <FadeIn className='mt-5' delay={3000}>
+                            <Button href="/projects" className="jn-bg-pop-blue d-flex justify-content-center">Click Here</Button>
                         </FadeIn>
                     </div>
                 </main>
