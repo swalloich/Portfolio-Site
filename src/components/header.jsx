@@ -1,6 +1,6 @@
 // React imports
 import React from 'react';
-import { NavLink, Route, Routes, HashRouter } from 'react-router-dom';
+import { NavLink, Route, Routes, BrowserRouter } from 'react-router-dom';
 
 // page imports
 import { About } from '../pages/about';
@@ -21,7 +21,7 @@ import logo from "../images/logo.png";
 export class Header extends React.Component {
     render () {
         return (
-            <HashRouter>
+            <BrowserRouter>
                 <header className='header box-shadow-bottom'>
                     <div className='jn-container'>
                         <div className='logo divider-right'>
@@ -57,7 +57,7 @@ export class Header extends React.Component {
                     <Route path='/contact' element={ <Contact /> } />
                     <Route path="*" element={ <NotFound /> } />
                 </Routes>
-            </HashRouter>
+            </BrowserRouter>
         );
     }
 }
