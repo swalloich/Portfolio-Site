@@ -28,14 +28,16 @@ export class FadeIn extends React.Component {
     get classList() {
         let list = 'jn-anim-fade-in';
         list += ` ${this.state.mutableClasses.join(' ')}`;
-        list += ` ${this.props.classList}`;
+        list += ` ${this.props.className}`;
         return list;
     }
 
     componentDidMount() {
         setTimeout(() => {
-            this.#addClass('jn-opacity-100');
-            this.#removeClass('jn-opacity-0');
+            if (!this.state.mutableClasses.includes('jn-opacity-100')) {
+                this.#addClass('jn-opacity-100');
+                this.#removeClass('jn-opacity-0');
+            }
         }, 1000);
     }
 

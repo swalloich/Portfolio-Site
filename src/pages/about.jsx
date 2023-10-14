@@ -18,8 +18,9 @@ export class About extends React.Component {
                         </div>
                     </div>
                     <div className="jn-container">
-                        <FadeIn>
-                            <div className='jn-font-l jn-font-xl-lg'>Need a website?</div>
+                        <FadeIn className='row jn-font-l jn-font-xl-lg'>
+                            <div>Need a website?</div>
+                            <div></div>
                         </FadeIn>
                     </div>
                 </main>
