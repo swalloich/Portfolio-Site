@@ -48,19 +48,19 @@
 
 /* Font size */
 .jn-font-xxl {
-    font-size: 10em;
+    font-size: 10rem;
 }
 
 .jn-font-xl {
-    font-size: 5em;
+    font-size: 5rem;
 }
 
 .jn-font-l {
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 
 .jn-font-m {
-    font-size: 1.85em;
+    font-size: 1.85rem;
 }
 
 /* Lists */
@@ -110,38 +110,38 @@
 
 @media only screen and (min-width: 576px) {
     .jn-font-xxl-sm {
-        font-size: 10em;
+        font-size: 10rem;
     }
 
     .jn-font-xl-sm {
-        font-size: 5em;
+        font-size: 5rem;
     }
 
     .jn-font-l-sm {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .jn-font-m-sm {
-        font-size: 1.85em;
+        font-size: 1.85rem;
     }
 }
 
 /* md */
 @media only screen and (min-width: 768px) {
     .jn-font-xxl-md {
-        font-size: 10em;
+        font-size: 10rem;
     }
 
     .jn-font-xl-md {
-        font-size: 5em;
+        font-size: 5rem;
     }
 
     .jn-font-l-md {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .jn-font-m-md {
-        font-size: 1.85em;
+        font-size: 1.85rem;
     }
 }
 
@@ -149,56 +149,56 @@
 @media only screen and (min-width: 992px) {
     /* Font size */
     .jn-font-xxl-lg {
-        font-size: 10em;
+        font-size: 10rem;
     }
 
     .jn-font-xl-lg {
-        font-size: 5em;
+        font-size: 5rem;
     }
 
     .jn-font-l-lg {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .jn-font-m-lg {
-        font-size: 1.85em;
+        font-size: 1.85rem;
     }
 }
 
 /* xl */
 @media only screen and (min-width: 1200px) {
     .jn-font-xxl-xl {
-        font-size: 10em;
+        font-size: 10rem;
     }
 
     .jn-font-xl-xl {
-        font-size: 5em;
+        font-size: 5rem;
     }
 
     .jn-font-l-xl {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .jn-font-m-xl {
-        font-size: 1.85em;
+        font-size: 1.85rem;
     }
 }
 
 /* xxl */
 @media only screen and (min-width: 1400px) {
     .jn-font-xxl-xxl {
-        font-size: 10em;
+        font-size: 10rem;
     }
 
     .jn-font-xl-xxl {
-        font-size: 5em;
+        font-size: 5rem;
     }
 
     .jn-font-l-xxl {
-        font-size: 2.5em;
+        font-size: 2.5rem;
     }
 
     .jn-font-m-xxl {
-        font-size: 1.85em;
+        font-size: 1.85rem;
     }
 }
