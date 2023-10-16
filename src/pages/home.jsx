@@ -11,7 +11,7 @@ export class Home extends React.Component {
     render () {
         return (
             <>
-                <main className='d-flex flex-column align-items-center w-100 overflow-hidden'>
+                <main className='d-flex flex-column align-items-center w-100'>
                     <div className="w-100 d-flex justify-content-end py-5 jn-anim-slide-from-right">
                         <div className="right-edge-card jn-bg-super-light-blue-t">
                             <img src={headshot} alt="" height={300} width={300} onLoadStart={lazy}/>
