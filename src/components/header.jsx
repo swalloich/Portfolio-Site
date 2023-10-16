@@ -10,7 +10,7 @@ import { NotFound } from '../pages/not-found';
 
 // components
 import NavBar from './nav-bar'
-import CloseNavLink from './close-nav-link';
+import { CloseNavLink } from './close-nav-link';
 
 // style sheet imports
 import "../styles/utility-classes.css";

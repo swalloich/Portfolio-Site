@@ -10,6 +10,16 @@
     border-radius: 5px;
 }
 
+.nav-hamburger.open .hamburger-icon,
+.nav-hamburger.closed .close-icon {
+    display: none;
+}
+
+.nav-hamburger.closed .hamburger-icon,
+.nav-hamburger.open .close-icon {
+    display: block;
+}
+
 @media only screen and (max-width: 600px) {
     .nav-hamburger {
         display: flex;

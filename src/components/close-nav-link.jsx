@@ -3,16 +3,16 @@ import React from "react";
 // component imports
 import { toggleHamburgerIcon } from "./hamburger-button";
 
-function CloseNavLink(props) {
-    function handleClick(event) {
-        const clickTarget = document.getElementById(props.target);
+export class CloseNavLink extends React.Component {
+    handleClick = (event) => {
+        const clickTarget = document.getElementById(this.props.target);
         if (clickTarget && !clickTarget.firstChild.classList.contains("active")) {
-            hideNavMenu(clickTarget, 200);
-            toggleHamburgerIcon(props.target);
+            this.hideNavMenu(clickTarget, 200);
+            toggleHamburgerIcon(this.props.target);
         }
     }
 
-    function hideNavMenu(clickTarget, ms) {
+    hideNavMenu(clickTarget, ms) {
         if (clickTarget) {
             if (!clickTarget.classList.contains("jn-visually-hidden")) {
                 clickTarget.classList.add("jn-visually-hidden");
@@ -25,13 +25,11 @@ function CloseNavLink(props) {
         }
     }
 
-    return (
-        <>
-            <li className="closeNav" onClick={handleClick}>
-                { props.children }
+    render() {
+        return (
+            <li className="closeNav" onClick={this.handleClick}>
+                { this.props.children }
             </li>
-        </>
-    );
+        );
+    }
 }
-
-export default CloseNavLink;

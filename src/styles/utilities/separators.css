@@ -1,9 +1,3 @@
-.jn-separator-300-end {
-    position: relative;
-}
-
-
-
 .jn-separator-300-start::before,
 .jn-separator-300-end::after,
 .jn-separator-300-top::before,

@@ -7,21 +7,30 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 // css imports
 import "../styles/components/nav-hamburger.css";
 
-export function HamburgerButton(props) {
-    function hideNavMenu(clickTarget, ms) {
-        if (clickTarget) {
-            if (!clickTarget.classList.contains("jn-visually-hidden")) {
-                clickTarget.classList.add("jn-visually-hidden");
+export class HamburgerButton extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            mutableClasses: ["closed"],
+        };
+    }
+
+    #addClass(className) {
+        this.state.mutableClasses.push(className);
+    }
+
+    #removeClass(className) {
+        let classArray = this.state.mutableClasses;
+        for (let i = 0; i < classArray.length; i++) {
+            if (classArray[i] === className) {
+                classArray.splice(i, 1);
+                this.setState({ mutableClasses: classArray });
             }
-            setTimeout(() => {
-                if (!clickTarget.classList.contains("jn-hidden")) {
-                    clickTarget.classList.add("jn-hidden");
-                }
-            }, ms); 
         }
     }
 
-    function showNavMenu(clickTarget, ms) {
+    #showNavMenu(clickTarget, ms) {
         if (clickTarget) {
             if (clickTarget.classList.contains('jn-hidden')) {
                 clickTarget.classList.remove('jn-hidden');
@@ -33,61 +42,78 @@ export function HamburgerButton(props) {
             }, ms);
         }
     }
-
-    function internalToggleHamburgerIcon (clicked) {
-        const hamburgers = document.querySelectorAll('.nav-hamburger');
-        hamburgers.forEach((hamburger) => {
-            const hamburgerChildren = hamburger.childNodes;
-            if (hamburger === clicked || hamburger.contains(clicked)) {
-                hamburgerChildren.forEach((child) => {
-                    if (child.classList.contains('d-none')) {
-                        child.classList.remove('d-none');
-                        child.classList.add('d-block');
-                    } else if (child.classList.contains('d-block')) {
-                        child.classList.remove('d-block');
-                        child.classList.add('d-none');
-                    }
-                });
+    
+    #hideNavMenu(clickTarget, ms) {
+        if (clickTarget) {
+            if (!clickTarget.classList.contains("jn-visually-hidden")) {
+                clickTarget.classList.add("jn-visually-hidden");
             }
-        });
+            setTimeout(() => {
+                if (!clickTarget.classList.contains("jn-hidden")) {
+                    clickTarget.classList.add("jn-hidden");
+                }
+            }, ms);
+        }
     }
 
-    function handleClick(event) {
-        const targetElement = document.getElementById(props.target);
+    toggleHamburgerIcon() {
+        if (this.state.mutableClasses.includes('open')) {
+            this.#addClass('closed');
+            this.#removeClass('open');
+        } else if (this.state.mutableClasses.includes('closed')) {
+            this.#addClass('open');
+            this.#removeClass('closed');
+        }
+        console.log(`Mutable Classes: ${this.state.mutableClasses}`)
+    }
+
+    handleClick = (event) => {
+        const targetElement = document.getElementById(this.props.target);
         if (targetElement) {
             if (targetElement.classList.contains('jn-visually-hidden') ||
                 targetElement.classList.contains('jn-hidden')) {
-                showNavMenu(targetElement, 5);
+                this.#showNavMenu(targetElement, 5);
             } else {
-                hideNavMenu(targetElement, 200);
+                this.#hideNavMenu(targetElement, 200);
             }
-            internalToggleHamburgerIcon(event.target);
+            this.toggleHamburgerIcon(event.target);
         } else {
-            console.warn(`Target "${props.target}" not found.`)
+            console.warn(`Target "${this.props.target}" not found.`)
         }
     }
 
-    return (
-        <div id={ props.target + "-hamburger" } className='nav-hamburger toggle-button' role='button' onClick={handleClick}>
-            <div className="d-block">
-                <FontAwesomeIcon icon={icon({name: 'bars'})} />
+    get classList() {
+        let list = "nav-hamburger toggle-button";
+        if (this.state.mutableClasses.length > 0) {
+            list += ` ${this.state.mutableClasses.join(' ')}`;
+        }
+        console.log(`class list constructed: ${list}`)
+        return list;
+    }
+
+    render() {
+        return (
+            <div id={ this.props.target + "-hamburger" } className={this.classList} role='button' onClick={this.handleClick}>
+                <div className="hamburger-icon">
+                    <FontAwesomeIcon icon={icon({name: 'bars'})} />
+                </div>
+                <div className="close-icon">
+                    <FontAwesomeIcon icon={icon({name: 'xmark'})} />
+                </div>
             </div>
-            <div className="d-none">
-                <FontAwesomeIcon icon={icon({name: 'xmark'})} />
-            </div>
-        </div>
-    );
+        )
+    }
 }
 
 export function toggleHamburgerIcon(hamburgerTarget) {
-    const hamburgerElem = document.getElementById(hamburgerTarget + '-hamburger');
-    hamburgerElem.childNodes.forEach((child) => {
-        if (child.classList.contains('d-none')) {
-            child.classList.remove('d-none');
-            child.classList.add('d-block');
-        } else if (child.classList.contains('d-block')) {
-            child.classList.remove('d-block');
-            child.classList.add('d-none');
+    const targetElem = document.getElementById(`${hamburgerTarget}-hamburger`);
+    if (targetElem) {
+        if (targetElem.classList.contains('open')) {
+            targetElem.classList.add('closed');
+            targetElem.classList.remove('open');
+        } else if (targetElem.classList.contains('close')) {
+            targetElem.classList.add('open');
+            targetElem.classList.remove('closed');
         }
-    });
+    }
 }
