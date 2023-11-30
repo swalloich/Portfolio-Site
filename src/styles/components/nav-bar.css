@@ -29,31 +29,6 @@
     color: var(--pop-blue)
 }
 
-/*
-Old underline bar
-.nav-bar ul li a::before {
-    content: '';
-    position: absolute;
-    bottom: 5%;
-    width: 0;
-    border-radius: 2px;
-    transition: width 200ms ease, border-color 200ms ease;
-}
-
-.nav-bar ul li a.active::before,
-.nav-bar ul li a:hover::before {
-    width: 70%;
-    border: 2px solid;
-}
-
-.nav-bar ul li a.active::before {
-    border-color: var(--orange);
-}
-
-.nav-bar ul li a:not(.active):hover::before {
-    border-color: var(--dark-gray);
-}*/
-
 .nav-bar ul li a:visited:not(.active) {
     color: var(--text-color);
 }
@@ -69,8 +44,8 @@ Old underline bar
                     opacity 200ms ease;
         height: 100%;
         width: 100%;
-        justify-content: end;
-        align-items: start;
+        justify-content: flex-end;
+        align-items: flex-start;
     }
 
     .logo.divider-right + .nav-bar {
