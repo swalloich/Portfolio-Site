@@ -34,21 +34,6 @@ class NavBar extends Component {
         return `${baseUlClasses} ${ulClassName || ""}`;
     }
 
-    componentDidUpdate() {
-        const { isMenuOpen } = this.props;
-        if (!isMenuOpen) {
-            this.updateNavClassList('add', 'jn-visually-hidden')
-            setTimeout(() => {
-                this.updateNavClassList('add', 'jn-hidden');
-            }, 200);
-        } else {
-            this.updateNavClassList('remove', 'jn-hidden');
-            setTimeout(() => {
-                this.updateNavClassList('remove', 'jn-visually-hidden');
-            }, 100)
-        }
-    }
-
     updateNavClassList(action, className) {
         const nav = this.navRef.current;
 
@@ -63,6 +48,21 @@ class NavBar extends Component {
                     classList.remove(className);
                 }
             }
+        }
+    }
+
+    componentDidUpdate() {
+        const { isMenuOpen } = this.props;
+        if (!isMenuOpen) {
+            this.updateNavClassList('add', 'jn-visually-hidden')
+            setTimeout(() => {
+                this.updateNavClassList('add', 'jn-hidden');
+            }, 200);
+        } else {
+            this.updateNavClassList('remove', 'jn-hidden');
+            setTimeout(() => {
+                this.updateNavClassList('remove', 'jn-visually-hidden');
+            }, 100)
         }
     }
 
