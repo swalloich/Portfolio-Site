@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 // style sheets
 import "../styles/components/button.css"
@@ -12,18 +13,28 @@ export class Button extends React.Component {
         }
     }
 
+    static propTypes = {
+        href: PropTypes.string.isRequired,
+        onClick: PropTypes.func,
+        className: PropTypes.string,
+        children: PropTypes.node,
+    }
+
     get classList() {
+        const { className } = this.props;
         let list = 'button ';
         // uncomment the line below if mutableClasses starts being used.
         //list += ` ${this.state.mutableClasses.join(' ')}`;
-        if (this.props.className) { list += ` ${this.props.className}`; }
+        if (className) { list += ` ${className}`; }
         return list;
     }
 
     render() {
+        const { href, onClick, children } = this.props;
+
         return (
-            <a href={ this.props.href } onClick={this.props.onClick} className={this.classList}>
-                { this.props.children }
+            <a href={href} onClick={onClick} className={this.classList}>
+                { children }
             </a>
         );
     }
