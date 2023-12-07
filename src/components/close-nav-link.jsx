@@ -1,35 +1,20 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
-// component imports
-import { toggleHamburgerIcon } from "./hamburger-button";
-
-export class CloseNavLink extends React.Component {
-    handleClick = (event) => {
-        const clickTarget = document.getElementById(this.props.target);
-        if (clickTarget && !clickTarget.firstChild.classList.contains("active")) {
-            this.hideNavMenu(clickTarget, 200);
-            toggleHamburgerIcon(this.props.target);
-        }
-    }
-
-    hideNavMenu(clickTarget, ms) {
-        if (clickTarget) {
-            if (!clickTarget.classList.contains("jn-visually-hidden")) {
-                clickTarget.classList.add("jn-visually-hidden");
-            }
-            setTimeout(() => {
-                if (!clickTarget.classList.contains("jn-hidden")) {
-                    clickTarget.classList.add("jn-hidden");
-                }
-            }, ms);
-        }
+class CloseNavLink extends React.Component {
+    static propTypes = {
+        onLinkClicked: PropTypes.func.isRequired,
     }
 
     render() {
+        const { onLinkClicked } = this.props;
+
         return (
-            <li className="closeNav" onClick={this.handleClick}>
+            <li className="closeNav" onClick={onLinkClicked}>
                 { this.props.children }
             </li>
         );
     }
 }
+
+export default CloseNavLink;
