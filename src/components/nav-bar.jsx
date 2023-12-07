@@ -1,32 +1,48 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from 'prop-types';
 
 // component and utility function imports
-import { HamburgerButton } from "./hamburger-button";
+import HamburgerButton from "./hamburger-button";
 
 // css imports
 import "../styles/components/nav-bar.css";
 
 class NavBar extends Component {
     static propTypes = {
-        children: PropTypes.node,
-        onMenuToggle: PropTypes.func.isRequired,
+        onMenuClick: PropTypes.func.isRequired,
+        onMenuClose: PropTypes.func.isRequired,
         isMenuOpen: PropTypes.bool.isRequired,
+        children: PropTypes.node,
+        navClassName: PropTypes.string,
+        ulClassName: PropTypes.string,
     }
 
-    render () {
-        const { children, onMenuToggle, isMenuOpen } = this.props;
-        const classList = `nav-bar ${isMenuOpen ? '' : 'jn-hidden jn-visually-hidden'}`
+    get navClassList() {
+        const { isMenuOpen, navClassName } = this.props;
+        const baseNavClasses = `nav-bar${(isMenuOpen) ? "" : " jn-visually-hidden"}`
+        return `${baseNavClasses} ${navClassName || ""}`;
+    }
+
+    get ulClassList() {
+        const { ulClassName } = this.props;
+        const baseUlClasses = `jn-visually-hidden jn-hidden`;
+        return `${baseUlClasses} ${ulClassName || ""}`;
+    }
+
+    render() {
+        const { onMenuClick, onMenuClose, isMenuOpen, children } = this.props;
 
         return (
             <>
-                <nav className={classList}>
-                    { children }
+                <nav className={this.navClassList} onClick={onMenuClose}>
+                    <ul className="jn-visually-hidden jn-hidden">
+                        {children}
+                    </ul>
                 </nav>
-                <HamburgerButton onNenuClick={onMenuToggle} />
+                <HamburgerButton onMenuClick={onMenuClick} isMenuOpen={isMenuOpen} />
             </>
         );
     }
 }
 
-export default NavBar;      
+export default NavBar;
