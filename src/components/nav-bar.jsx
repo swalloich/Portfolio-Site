@@ -8,6 +8,11 @@ import HamburgerButton from "./hamburger-button";
 import "../styles/components/nav-bar.css";
 
 class NavBar extends Component {
+    constructor(props) {
+        super(props);
+        this.navRef = React.createRef();
+    }
+
     static propTypes = {
         onMenuClick: PropTypes.func.isRequired,
         onMenuClose: PropTypes.func.isRequired,
@@ -19,7 +24,7 @@ class NavBar extends Component {
 
     get navClassList() {
         const { isMenuOpen, navClassName } = this.props;
-        const baseNavClasses = `nav-bar${(isMenuOpen) ? "" : " jn-visually-hidden"}`
+        const baseNavClasses = `nav-bar jn-visually-hidden`;
         return `${baseNavClasses} ${navClassName || ""}`;
     }
 
@@ -29,13 +34,45 @@ class NavBar extends Component {
         return `${baseUlClasses} ${ulClassName || ""}`;
     }
 
+    componentDidUpdate() {
+        const { isMenuOpen } = this.props;
+        if (!isMenuOpen) {
+            this.updateNavClassList('add', 'jn-visually-hidden')
+            setTimeout(() => {
+                this.updateNavClassList('add', 'jn-hidden');
+            }, 200);
+        } else {
+            this.updateNavClassList('remove', 'jn-hidden');
+            setTimeout(() => {
+                this.updateNavClassList('remove', 'jn-visually-hidden');
+            }, 100)
+        }
+    }
+
+    updateNavClassList(action, className) {
+        const nav = this.navRef.current;
+
+        if (nav) {
+            const classList = nav.classList;
+            if (action === "add") {
+                if (!classList.contains(className)) {
+                    classList.add(className);
+                }
+            } else if (action === "remove") {
+                if (classList.contains(className)) {
+                    classList.remove(className);
+                }
+            }
+        }
+    }
+
     render() {
         const { onMenuClick, onMenuClose, isMenuOpen, children } = this.props;
 
         return (
             <>
-                <nav className={this.navClassList} onClick={onMenuClose}>
-                    <ul className="jn-visually-hidden jn-hidden">
+                <nav ref={this.navRef} className={this.navClassList} onClick={onMenuClose}>
+                    <ul className={this.ulClassList}>
                         {children}
                     </ul>
                 </nav>
