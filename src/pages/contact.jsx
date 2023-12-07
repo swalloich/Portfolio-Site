@@ -10,7 +10,7 @@ import "../styles/utilities/separators.css";
 // bootstrap
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 
-export class Contact extends React.Component {
+class Contact extends React.Component {
     render () {
         return (
             <main className='d-flex justify-content-center'>
@@ -43,3 +43,5 @@ export class Contact extends React.Component {
         )
     }
 }
+
+export default Contact;

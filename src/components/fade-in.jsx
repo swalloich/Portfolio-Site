@@ -2,7 +2,7 @@ import React from 'react';
 
 import "../styles/utilities/animations.css"
 
-export class FadeIn extends React.Component {
+class FadeIn extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -54,3 +54,5 @@ export class FadeIn extends React.Component {
         );
     }
 }
+
+export default FadeIn;

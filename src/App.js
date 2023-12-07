@@ -2,7 +2,7 @@ import { useState } from "react";
 import { NavLink } from 'react-router-dom';
 
 // components
-import AppRouter from "./scripts/AppRouter";
+import AppRouter from "./components/AppRouter";
 import Header from "./components/header";
 import NavBar from './components/nav-bar'
 import CloseNavLink from './components/close-nav-link';

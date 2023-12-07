@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/utility-classes.css";
 
-export class NotFound extends React.Component
+class NotFound extends React.Component
 {
     render () {
         return (
@@ -13,3 +13,5 @@ export class NotFound extends React.Component
         );
     }
 }
+
+export default NotFound;

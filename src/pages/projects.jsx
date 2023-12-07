@@ -1,12 +1,13 @@
 import React from 'react';
 
+// components
 import { Tag } from "../components/tag";
 
+// style sheets
 import "../styles/components/cards.css";
-
 import "bootstrap/dist/css/bootstrap-grid.min.css";
 
-export class Projects extends React.Component {
+class Projects extends React.Component {
     render() {
         return (
             <main className='d-flex justify-content-center'>
@@ -133,3 +134,5 @@ export class Projects extends React.Component {
         )
     }
 }
+
+export default Projects;

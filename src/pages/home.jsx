@@ -2,13 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 // components
-import { FadeIn } from "../components/fade-in";
+import FadeIn from "../components/fade-in";
 // resources
 import headshot from "../images/jacob_headshot.jpg"
 // style sheets
 import "../styles/utilities/animations.css"
 
-export class Home extends React.Component {
+class Home extends React.Component {
     render() {
         return (
             <main className='d-flex flex-column align-items-center w-100'>
@@ -33,3 +33,5 @@ export class Home extends React.Component {
         )
     }
 }
+
+export default Home;
