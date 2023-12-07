@@ -14,6 +14,7 @@ class HamburgerButton extends React.Component {
         this.state = {
             currentClasses: [],
         }
+        this.buttonRef = React.createRef();
     }
 
     static propTypes = {
@@ -35,16 +36,26 @@ class HamburgerButton extends React.Component {
         return list;
     }
 
+    componentDidUpdate() {
+        const { isMenuOpen } = this.props;
+        const button = this.buttonRef.current;
+        const disableTime = (isMenuOpen) ? 100 : 200;
+        button.disabled = true;
+        setTimeout(() => {
+            button.disabled = false;
+        }, disableTime);
+    }
+
     render() {
         const { onMenuClick } = this.props;
 
         return (
-            <button className={this.classList} type='button' onClick={onMenuClick}>
+            <button ref={this.buttonRef} className={this.classList} type='button' onClick={onMenuClick}>
                 <div className="hamburger-icon">
-                    <FontAwesomeIcon icon={icon({name: 'bars'})} />
+                    <FontAwesomeIcon icon={icon({ name: 'bars' })} />
                 </div>
                 <div className="close-icon">
-                    <FontAwesomeIcon icon={icon({name: 'xmark'})} />
+                    <FontAwesomeIcon icon={icon({ name: 'xmark' })} />
                 </div>
             </button>
         )
