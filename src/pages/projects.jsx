@@ -10,26 +10,28 @@ import "bootstrap/dist/css/bootstrap-grid.min.css";
 class Projects extends React.Component {
     render() {
         return (
-            <main className='d-flex justify-content-center'>
+            <main className='d-flex justify-content-center pt-5'>
                 <div className='jn-container'>
-                    <h1 className='pt-5 pb-4'>Projects</h1>
+                    <h1 className='mb-5'>Projects</h1>
                     <div className='gutter-container flex-gap-md flex-direction-column flex-direction-md-row'>
                         <div className='full-card half-card-md'>
-                            <h2 className='mb-0'>This Site</h2>
+                            <h2 className='mb-3'>This Site</h2>
                             <div className='card-body'>
-                                <h4 className='mb-0'>Description</h4>
-                                <p className='mt-0'>
-                                    This website was designed, built, and deployed by me.
-                                    Bootstrap was used to make building a site that is
-                                    responsive easier. React was used to build it, so that I
-                                    could take advantage of templating. This site is hosted on
-                                    an Oracle Cloud always free teir instance that is managed
-                                    by me as well.
-
-                                </p>
+                                <h3>Description</h3>
+                                <ul>
+                                    <li>
+                                        Designed a simple and powerful site to comprehensively
+                                        communicate showcase my dozens of skills in a minimal
+                                        number of pages.
+                                    </li>
+                                    <li>
+                                        Outlined a vision for static and functional portfolio site
+                                        components to minimize development time.
+                                    </li>
+                                </ul>
                             </div>
-                            <h4>Skills & Technologies Used</h4>
-                            <div className='gutter-container flex-gap-xsm'>
+                            <h3>Skills & Technologies Used</h3>
+                            <div className='mt-2 gutter-container flex-gap-xsm'>
                                 <Tag>React</Tag>
                                 <Tag>CSS</Tag>
                                 <Tag>Bootstrap 5</Tag>
@@ -40,30 +42,55 @@ class Projects extends React.Component {
                             </div>
                         </div>
                         <div className='full-card half-card-md'>
-                            <h2 className='mb-0'>CSS Cleanup</h2>
+                            <h2 className='mb-3'>Education Site Search</h2>
                             <div className='card-body'>
-                                <h4 className='mb-0'>Source</h4>
-                                <a className='jn-font-pop-blue mt-1' href="https://education.byu.edu/" target='_blank' rel='noreferrer'>education.byu.edu</a>
-                                <h4 className='mb-0'>Description</h4>
-                                <p className='mt-0'>
-                                    Our team determined that our site was suffering in two ways
-                                    because of the way out style sheets were structured. These were:
-                                </p>
-                                <ul className='ms-5'>
-                                    <li>Decreased page load times</li>
-                                    <li>Greater difficulty training new employees</li>
+                                <h3>Description</h3>
+                                <ul>
+                                    <li>
+                                        Enhanced site searching using API developed using PHP in
+                                        Drupal along with Google's custom search API.
+                                    </li>
+                                    <li>
+                                        Constructed a search page allowing fast access to thousands
+                                        of pages.
+                                    </li>
+                                    <li>
+                                        Wrote JavaScript leveraging a custom API while considering
+                                        reusability.
+                                    </li>
                                 </ul>
-                                <p>
-                                    We decided that using sass in our future stylesheets would
-                                    remedy both these issues. <br />After the new structure was
-                                    decided on, along with a set of rules team members would
-                                    be expected to follow going forward, we set our plan into
-                                    motion. The result was page load times approximately 3x
-                                    faster than before.
-                                </p>
                             </div>
-                            <h4 className='mb-2'>Skills & Technologies Used</h4>
-                            <div className='gutter-container flex-gap-xsm'>
+                            <h3>Skills & Technologies Used</h3>
+                            <div className='mt-2 gutter-container flex-gap-xsm'>
+                                <Tag>PHP</Tag>
+                                <Tag>Drupal</Tag>
+                                <Tag>JavaScript</Tag>
+                                <Tag>CSS</Tag>
+                                <Tag>SASS</Tag>
+                            </div>
+                        </div>
+                        <div className='full-card half-card-md'>
+                            <h2 className='mb-3'>CSS Cleanup</h2>
+                            <div className='card-body'>
+                                <h3>Source</h3>
+                                <p>
+                                    <a className='jn-font-pop-blue' href="https://education.byu.edu/" target='_blank' rel='noreferrer'>education.byu.edu</a>
+                                </p>
+                                <h3>Description</h3>
+                                <ul>
+                                    <li>
+                                        Collaborated with a team of developers to design an
+                                        improved stylesheet structure, improving page load times by
+                                        approximately three times.
+                                    </li>
+                                    <li>
+                                        Directed a team of 4 other developers toward an ideal
+                                        solution to a complex problem.
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3>Skills & Technologies Used</h3>
+                            <div className='mt-2 gutter-container flex-gap-xsm'>
                                 <Tag>SASS</Tag>
                                 <Tag>node.js</Tag>
                                 <Tag>CSS</Tag>
@@ -75,12 +102,14 @@ class Projects extends React.Component {
                             </div>
                         </div>
                         <div className='full-card half-card-md'>
-                            <h2 >McKay School Directory</h2>
+                            <h2 className='mb-3'>McKay School Directory</h2>
                             <div className='card-body'>
-                                <h4 className='my-0'>Source</h4>
-                                <a className='jn-font-pop-blue mt-1' href="https://education.byu.edu/directory" target='_blank' rel='noreferrer'>McKay School Directory</a>
-                                <h4 className='mb-0'>Description</h4>
-                                <p className='mt-0'>
+                                <h3>Source</h3>
+                                <p>
+                                    <a className='jn-font-pop-blue' href="https://education.byu.edu/directory" target='_blank' rel='noreferrer'>McKay School Directory</a>
+                                </p>
+                                <h3>Description</h3>
+                                <p>
                                     The site's directory page worked fine on desktop, but was
                                     near impossible to use on mobile devices. The original was
                                     a table automatically generated by Drupal. I crafted a new
@@ -88,8 +117,8 @@ class Projects extends React.Component {
                                     view width, making it usable both on desktop and mobile.
                                 </p>
                             </div>
-                            <h4 className='mb-2'>Skills and Technologies Used</h4>
-                            <div className='gutter-container flex-gap-xsm'>
+                            <h3>Skills and Technologies Used</h3>
+                            <div className='mt-2 gutter-container flex-gap-xsm'>
                                 <Tag>Bootstrap 5</Tag>
                                 <Tag>Drupal</Tag>
                                 <Tag>Twig</Tag>
@@ -97,9 +126,9 @@ class Projects extends React.Component {
                             </div>
                         </div>
                         <div className='full-card half-card-md'>
-                            <h2>Speech & Language Clinic</h2>
+                            <h2 className='mb-3'>Speech & Language Clinic</h2>
                             <div className='card-body'>
-                                <h4 className='my-0'>Source</h4>
+                                <h3 className=''>Source</h3>
                                 <a className='jn-font-pop-blue mt-1 d-block' href='https://education.byu.edu/comd/speech-and-language-clinic' target='_blank' rel='noreferrer'>Speech & Language Clinic</a>
                                 <ul className='mt-0'>
                                     <li>
@@ -112,16 +141,16 @@ class Projects extends React.Component {
                                         <a className='jn-font-pop-blue ms-3 d-block' href='https://education.byu.edu/comd/speech-and-language-clinic/resources' target='_blank' rel="noreferrer">/resources</a>
                                     </li>
                                 </ul>
-                                <h4 className='mb-0'>Description</h4>
-                                <p className='mt-0'>
+                                <h3>Description</h3>
+                                <p>
                                     I Constructed a series of pages from screenshots provided
                                     by our UX team. I implemented responsive design techniques
                                     to ensure an optimal experience on both desktop and mobile
                                     platforms.
                                 </p>
                             </div>
-                            <h4 className='mb-2'>Skills and Technologies Used</h4>
-                            <div className='gutter-container flex-gap-xsm'>
+                            <h3>Skills and Technologies Used</h3>
+                            <div className='mt-2 gutter-container flex-gap-xsm'>
                                 <Tag>Bootstrap 5</Tag>
                                 <Tag>CSS</Tag>
                                 <Tag>HTML 5</Tag>
