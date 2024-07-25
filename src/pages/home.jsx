@@ -1,10 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// components
-import FadeIn from "../components/fade-in";
-// resources
-import headshot from "../images/jacob_headshot.jpg";
 // style sheets
 import "../styles/utilities/animations.css";
 import "../styles/components/dynamic-image.css";
@@ -21,7 +17,7 @@ class Home extends React.Component {
                         </div>
                         <div className="mt-5 ms-5">
                             <h2 className="jn-font-l">Need a website?</h2>
-                            <button className="btn btn-primary d-block mt-3">Click Here</button>
+                            <NavLink className="btn btn-primary d-block mt-3 w-fit-content" to="/projects">Get Started</NavLink>
                         </div>
                     </div>
                 </div>
