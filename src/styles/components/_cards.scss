@@ -1,40 +1,36 @@
+@use '../variables';
+
 .quarter-card,
 .half-card,
 .full-card {
     padding: 20px;
-    border: 2px solid var(--super-light-blue);
+    border: 2px solid variables.$super-light-blue;
     border-radius: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-}
 
-.quarter-card h2,
-.half-card h2,
-.full-card h2 {
-    margin-top: 0;
-}
+    h2 {
+        margin-top: 0;
+    }
 
-.quarter-card :last-child,
-.half-card :last-child
-.full-card :last-child {
-    margin-bottom: 0;
-}
+    :last-child {
+        margin-bottom: 0;
+    }
 
-.quarter-card .card-body,
-.half-card .card-body,
-.full-card .card-body {
-    flex: 2;
+    .card-body {
+        flex: 2;
+    }
 }
 
 .quarter-card {
-    max-width: calc(25% - var(--gap-width));
+    max-width: calc(25% - variables.$gap-width);
 }
 
 .half-card {
-    max-width: calc(50% - var(--gap-width));
+    max-width: calc(50% - variables.$gap-width);
 }
 
 .full-card {
@@ -45,13 +41,17 @@
 
 .right-edge-card,
 .left-edge-card {
-    border: 2px solid var(--super-light-blue);
+    border: 2px solid variables.$super-light-blue;
     height: fit-content;
     overflow: hidden;
     display: flex;
     align-items: center;
-
     width: 95%;
+
+    img {
+        max-width: 150px;
+        height:auto;
+    }
 }
 
 .right-edge-card {
@@ -64,62 +64,60 @@
     border-radius: 0 20px 20px 0;
 }
 
-.left-edge-card img,
-.right-edge-card img {
-    max-width: 150px;
-    height:auto;
-}
-
 /* sm card */
 @media only screen and (min-width: 576px) {
     .quarter-card-sm {
-        max-width: calc(25% - var(--gap-width));
+        max-width: calc(25% - variables.$gap-width);
     }
 
     .half-card-sm {
-        max-width: calc(50% - var(--gap-width));
+        max-width: calc(50% - variables.$gap-width);
     }
 
     .full-card-sm {
         max-width: 100%;
     }
 
-    .left-edge-card img,
-    .right-edge-card img {
-        max-width: 200px;
-        height:auto;
+    .left-edge-card,
+    .right-edge-card {
+        img {
+            max-width: 200px;
+            height:auto;
+        }
     }
 }
 
 /* md card */
 @media only screen and (min-width: 768px) {
     .quarter-card-md {
-        max-width: calc(25% - var(--gap-width));
+        max-width: calc(25% - variables.$gap-width);
     }
 
     .half-card-md {
-        max-width: calc(50% - var(--gap-width));
+        max-width: calc(50% - variables.$gap-width);
     }
 
-    .full-card-mda {
+    .full-card-md {
         max-width: 100%;
     }
 
-    .left-edge-card img,
-    .right-edge-card img {
-        max-width: 300px;
-        height:auto;
+    .left-edge-card,
+    .right-edge-card {
+        img {
+            max-width: 300px;
+            height:auto;
+        }
     }
 }
 
 /* lg card */
 @media only screen and (min-width: 992px) {
     .quarter-card-lg {
-        max-width: calc(25% - var(--gap-width));
+        max-width: calc(25% - variables.$gap-width);
     }
 
     .half-card-lg {
-        max-width: calc(50% - var(--gap-width));
+        max-width: calc(50% - variables.$gap-width);
     }
 
     .full-card-lg {
@@ -130,11 +128,11 @@
 /* xl card */
 @media only screen and (min-width: 1200px) {
     .quarter-card-xl {
-        max-width: calc(25% - var(--gap-width));
+        max-width: calc(25% - variables.$gap-width);
     }
 
     .half-card-xl {
-        max-width: calc(50% - var(--gap-width));
+        max-width: calc(50% - variables.$gap-width);
     }
 
     .full-card-xl {
@@ -149,11 +147,11 @@
 /* xxl card */
 @media only screen and (min-width: 1400px) {
     .quarter-card-sm {
-        max-width: calc(25% - var(--gap-width));
+        max-width: calc(25% - variables.$gap-width);
     }
 
     .half-card-sm {
-        max-width: calc(50% - var(--gap-width));
+        max-width: calc(50% - variables.$gap-width);
     }
 
     .full-card-sm {

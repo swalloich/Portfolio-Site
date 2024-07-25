@@ -8,7 +8,7 @@ import NavBar from './components/nav-bar'
 import CloseNavLink from './components/close-nav-link';
 
 // stylesheets
-import "./styles/base.css";
+import "./styles/main.scss";
 
 function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

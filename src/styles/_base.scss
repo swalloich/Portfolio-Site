@@ -1,38 +1,10 @@
-:root {
-    /* Site Colors */
-    --orange: #FF9C00;
-    --gray: #666;
-    --dark-gray: #333;
-    --bg-gray: #272D33;
-    --extra-light-blue: #60686e;
-    --super-light-blue: #abb7c0;
-    --super-light-blue-t: #abb7c040;
-    --light-blue: #8AC8FF;
-    --pop-blue: #0086FF;
-    --dark-blue: #005EB3;
-    --almost-black: #000f1b;
-
-    --text-color: #FFFAFA;
-    --box-shadow-color: #0000001a;
-
-    /* Logo Colors */
-    --github-logo-color: white;
-    --linkedin-blue: #0077B5;
-
-    /* shadow variables */
-    --box-shadow-offset: 4px;
-    --box-shadow-blur-radius: 6px;
-
-    /* size variables */
-    --header-height: 85px;
-    --gap-width: 10px;
-}
+@use 'variables';
 
 body, #root {
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    background-color: var(--bg-gray);
-    color: var(--text-color);
+    background-color: variables.$bg-gray;
+    color: variables.$text-color;
     overflow-x: hidden;
 }
 
@@ -41,7 +13,7 @@ body, #root {
 }
 
 main {
-    min-height: calc(100vh - var(--header-height));
+    min-height: calc(100vh - variables.$header-height);
     width: 100%;
 }
 
@@ -66,7 +38,7 @@ a:link, a:visited {
 }
 
 a:not(a.btn), a:not(a.btn):visited {
-    color: var(--pop-blue);
+    color: variables.$pop-blue;
 }
 
 /* media queries */

@@ -1,0 +1,88 @@
+@use '../variables';
+.logo.divider-right + .nav-bar {
+    margin-left: 26px;
+}
+
+.nav-bar {
+    ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+
+        li {
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+
+            a {
+                padding: 10px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+                color: variables.$text-color;
+                font-weight: 600;
+                font-size: 16px;
+
+                &.active {
+                    color: variables.$pop-blue
+                }
+
+                &:visited:not(.active) {
+                    color: variables.$text-color;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .logo.divider-right + .nav-bar {
+        margin-left: 0;
+    }
+
+    .nav-bar {
+        display: flex;
+        position: fixed;
+        left: 0;
+        top: variables.$header-height;
+        background-color: rgba(0,0,0,0.4);
+        transition: background-color 200ms ease,
+                    opacity 200ms ease;
+        height: 100%;
+        width: 100%;
+        justify-content: flex-end;
+        align-items: flex-start;
+        &.jn-hidden {
+            display: none;
+        }
+        &.jn-visually-hidden {
+            opacity: 0;
+        }
+        ul {
+            position: fixed;
+            flex-direction: column;
+            background-color: variables.$bg-gray;
+            align-items: end;
+            height: 100%;
+            width: 50%;
+            left: 50%;
+            transition: left 200ms ease;
+        }
+    }
+
+    .nav-bar.jn-visually-hidden ul {
+        left: 100%;
+    }
+
+    .nav-bar ul li a {
+        margin: 0 40px 20px 0;
+        height: 25px;
+    }
+
+    .nav-bar ul li:not(:last-child) {
+        margin: 0;
+    }
+}

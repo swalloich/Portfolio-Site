@@ -1,9 +1,14 @@
+@use 'variables';
+
+@import 'utilities/animations';
+@import 'utilities/separators';
+
 .box-shadow-top {
-    box-shadow: 0 calc(-1 * var(--box-shadow-offset)) var(--box-shadow-blur-radius) var(--box-shadow-color);
+    box-shadow: 0 calc(-1 * variables.$box-shadow-offset) variables.$box-shadow-blur-radius variables.$box-shadow-color;
 }
 
 .box-shadow-bottom {
-    box-shadow: 0 var(--box-shadow-offset) var(--box-shadow-blur-radius) var(--box-shadow-color);
+    box-shadow: 0 variables.$box-shadow-offset variables.$box-shadow-blur-radius variables.$box-shadow-color;
 }
 
 /* Size */
@@ -18,32 +23,32 @@
 
 /* Background color */
 .jn-bg-pop-blue {
-    background-color: var(--pop-blue);
+    background-color: variables.$pop-blue;
 }
 
 .jn-bg-super-light-blue-t {
-    background-color: var(--super-light-blue-t);
+    background-color: variables.$super-light-blue-t;
 }
 
 /* Font color */
 .jn-font-sl-blue {
-    color: var(--super-light-blue);
+    color: variables.$super-light-blue;
 }
 
 .jn-font-dark-gray {
-    color: var(--dark-gray);
+    color: variables.$dark-gray;
 }
 
 .jn-font-github-logo-color {
-    color: var(--github-logo-color) !important;
+    color: variables.$github-logo-color !important;
 }
 
 .jn-font-linkedin-blue {
-    color: var(--linkedin-blue) !important;
+    color: variables.$linkedin-blue !important;
 }
 
 .jn-font-pop-blue {
-    color: var(--pop-blue);
+    color: variables.$pop-blue;
 }
 
 /* Font size */
@@ -98,12 +103,12 @@
 
 .flex-gap-xsm {
     --gap-width: 5px;
-    gap: var(--gap-width);
+    gap: variables.$gap-width;
 }
 
 .flex-gap-md {
     --gap-width: 20px;
-    gap: var(--gap-width);
+    gap: variables.$gap-width;
 }
 
 /********************************************************************

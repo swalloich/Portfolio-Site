@@ -1,3 +1,5 @@
+@use '../variables';
+
 .nav-hamburger {
     display: none;
     align-items: center;
@@ -5,8 +7,8 @@
     font-size: 1.75rem;
     height: 40px;
     width: 40px;
-    border: 2px solid var(--super-light-blue);
-    color: var(--super-light-blue);
+    border: 2px solid variables.$super-light-blue;
+    color: variables.$super-light-blue;
     border-radius: 5px;
 }
 
