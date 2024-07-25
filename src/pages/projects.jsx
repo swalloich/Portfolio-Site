@@ -14,7 +14,7 @@ class Projects extends React.Component {
                 <div className='jn-container'>
                     <h1 className='mb-5'>Projects</h1>
                     <div className='gutter-container flex-gap-md flex-direction-column flex-direction-md-row'>
-                        <div className='full-card half-card-md'>
+                        <div className='full-card half-card-lg'>
                             <h2 className='mb-3'>This Site</h2>
                             <div className='card-body'>
                                 <h3>Description</h3>
@@ -41,7 +41,7 @@ class Projects extends React.Component {
                                 <Tag>Responsive Design</Tag>
                             </div>
                         </div>
-                        <div className='full-card half-card-md'>
+                        <div className='full-card half-card-lg'>
                             <h2 className='mb-3'>Education Site Search</h2>
                             <div className='card-body'>
                                 <h3>Description</h3>
@@ -69,7 +69,7 @@ class Projects extends React.Component {
                                 <Tag>SASS</Tag>
                             </div>
                         </div>
-                        <div className='full-card half-card-md'>
+                        <div className='full-card half-card-lg'>
                             <h2 className='mb-3'>CSS Cleanup</h2>
                             <div className='card-body'>
                                 <h3>Source</h3>
@@ -101,7 +101,7 @@ class Projects extends React.Component {
                                 <Tag>Twig</Tag>
                             </div>
                         </div>
-                        <div className='full-card half-card-md'>
+                        <div className='full-card half-card-lg'>
                             <h2 className='mb-3'>McKay School Directory</h2>
                             <div className='card-body'>
                                 <h3>Source</h3>
@@ -125,7 +125,7 @@ class Projects extends React.Component {
                                 <Tag>Responsive Design</Tag>
                             </div>
                         </div>
-                        <div className='full-card half-card-md'>
+                        <div className='full-card half-card-lg'>
                             <h2 className='mb-3'>Speech & Language Clinic</h2>
                             <div className='card-body'>
                                 <h3 className=''>Source</h3>
