@@ -1,21 +1,19 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-class CloseNavLink extends React.Component {
-    static propTypes = {
-        onLinkClicked: PropTypes.func.isRequired,
-        children: PropTypes.node,
-    }
+const CloseNavLink = (props) => {
+    const { onClick, children } = props;
 
-    render() {
-        const { onLinkClicked, children } = this.props;
+    return (
+        <li className="closeNav" onClick={onClick} role="button">
+            { children }
+        </li>
+    );
+}
 
-        return (
-            <li className="closeNav" onClick={onLinkClicked}>
-                { children }
-            </li>
-        );
-    }
+CloseNavLink.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    children: PropTypes.node,
 }
 
 export default CloseNavLink;

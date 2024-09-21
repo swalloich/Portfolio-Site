@@ -1,7 +1,5 @@
 import React from 'react';
 
-import "../styles/utilities/animations.css"
-
 class FadeIn extends React.Component {
     constructor(props) {
         super(props);

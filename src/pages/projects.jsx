@@ -1,11 +1,7 @@
 import React from 'react';
 
 // components
-import { Tag } from "../components/tag";
-
-// style sheets
-import "../styles/components/cards.css";
-import "bootstrap/dist/css/bootstrap-grid.min.css";
+import Tag from "../components/tag";
 
 class Projects extends React.Component {
     render() {

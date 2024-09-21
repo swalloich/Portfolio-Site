@@ -1,12 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// FontAwesome imports
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
-
-// css imports
-import "../styles/components/nav-hamburger.css";
+import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
 
 class HamburgerButton extends React.Component {
     constructor(props) {
@@ -18,7 +13,7 @@ class HamburgerButton extends React.Component {
     }
 
     static propTypes = {
-        onMenuClick: PropTypes.func.isRequired,
+        onClick: PropTypes.func.isRequired,
         isMenuOpen: PropTypes.bool.isRequired,
         className: PropTypes.string,
     }
@@ -47,15 +42,15 @@ class HamburgerButton extends React.Component {
     }
 
     render() {
-        const { onMenuClick } = this.props;
+        const { onClick } = this.props;
 
         return (
-            <button ref={this.buttonRef} className={this.classList} type='button' onClick={onMenuClick}>
+            <button ref={this.buttonRef} className={this.classList} type='button' onClick={onClick}>
                 <div className="hamburger-icon">
-                    <FontAwesomeIcon icon={icon({ name: 'bars' })} />
+                    <FontAwesomeIcon icon={faBars} />
                 </div>
                 <div className="close-icon">
-                    <FontAwesomeIcon icon={icon({ name: 'xmark' })} />
+                    <FontAwesomeIcon icon={faXmark} />
                 </div>
             </button>
         )

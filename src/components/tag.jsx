@@ -1,21 +1,26 @@
 import React from "react";
 
-// css imports
-import "../styles/components/tag.css";
-
-export function Tag(props) {
+const Tag = (props) => {
+    const { closable = false, children } = props;
 
     let classes = "tag";
 
-    if (!props.closable) {
+    if (!closable) {
         classes += " no-close";
     }
 
     return (
         <div className={ classes }>
             <div>
-                { props.children }
+                { children }
             </div>
         </div>
     );
 }
+
+Tag.propTypes = {
+    closable: Boolean,
+    children: String
+}
+
+export default Tag;

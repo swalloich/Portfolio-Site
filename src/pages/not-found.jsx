@@ -1,7 +1,5 @@
 import React from "react";
 
-import "../styles/utility-classes.css";
-
 class NotFound extends React.Component
 {
     render () {

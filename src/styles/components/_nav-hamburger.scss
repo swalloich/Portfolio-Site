@@ -19,7 +19,8 @@
 
 .nav-hamburger.closed .hamburger-icon,
 .nav-hamburger.open .close-icon {
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
