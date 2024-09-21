@@ -1,12 +1,8 @@
 import { NavLink } from 'react-router-dom';
-
-// components
 import AppRouter from "./components/AppRouter";
 import Header from "./components/header";
 import NavBar from './components/navigation/NavBar'
-import CloseNavLink from './components/close-nav-link';
-
-// stylesheets
+import CloseNavLink from './components/navigation/CloseNavLink';
 import "./styles/main.scss";
 
 const App = () => {
