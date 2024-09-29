@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppRouter from "./components/AppRouter";
-import Header from "./components/header";
+import Header from "./components/Header";
 import NavBar from './components/navigation/NavBar'
 import CloseNavLink from './components/navigation/CloseNavLink';
 import "./styles/main.scss";
