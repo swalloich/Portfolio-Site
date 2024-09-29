@@ -1,33 +1,30 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import HamburgerButton from "../hamburger-button";
 import NavLinks from "./NavLinks";
 
 const NavBar = (props) => {
-  const { children, navClassName = [], ulClassName = [] } = props;
-
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = useCallback(() => {
-    setIsMenuOpen(!isMenuOpen);
-  }, [isMenuOpen]);
+  const { children, isOpen: isMenuOpen, menuClick: setIsOpen, navClassName = [], ulClassName = [] } = props;
 
   return (
     <>
       <NavLinks
         isMenuOpen={isMenuOpen}
-        onClick={toggleMenu}
+        onClick={setIsOpen}
         navClassName={navClassName}
         ulClassName={ulClassName}
       >
         {children}
       </NavLinks>
-      <HamburgerButton onClick={toggleMenu} isMenuOpen={isMenuOpen} />
+      <HamburgerButton onClick={setIsOpen} isMenuOpen={isMenuOpen} />
     </>
   )
 }
 
 NavBar.propTypes = {
   children: PropTypes.node,
+  isOpen: PropTypes.bool,
+  menuClick: PropTypes.func,
   navClassName: PropTypes.array,
   ulClassName: PropTypes.array,
 }

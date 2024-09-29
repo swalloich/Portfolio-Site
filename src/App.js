@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppRouter from "./components/AppRouter";
 import Header from "./components/header";
@@ -6,10 +7,20 @@ import CloseNavLink from './components/navigation/CloseNavLink';
 import "./styles/main.scss";
 
 const App = () => {
+    const [isOpen, setIsOpen] = useState(false)
+
+    const toggleMenu = useCallback(() => {
+        setIsOpen(prevOpen => !prevOpen)
+    }, [setIsOpen])
+
+    const closeMenu = useCallback(() => {
+        setIsOpen(false)
+    }, [setIsOpen])
+
     return (
         <AppRouter>
-            <Header>
-                <NavBar>
+            <Header logoClick={closeMenu}>
+                <NavBar menuClick={toggleMenu} isOpen={isOpen}>
                     <CloseNavLink>
                         <NavLink to='/' activeclassname="active">
                             Home

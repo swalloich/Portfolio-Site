@@ -12,7 +12,7 @@ const CloseNavLink = (props) => {
 }
 
 CloseNavLink.propTypes = {
-    onClick: PropTypes.func.isRequired,
+    onClick: PropTypes.func,
     children: PropTypes.node,
 }
 

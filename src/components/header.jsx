@@ -4,13 +4,13 @@ import { NavLink } from 'react-router-dom';
 import logo from "../images/logo.png";
 
 const Header = (props) => {
-    const { onHomeClicked, children } = props;
+    const { logoClick, children } = props;
 
     return (
         <header className='header box-shadow-bottom'>
             <div className='jn-container'>
                 <div className='logo divider-right'>
-                    <NavLink to='' onClick={onHomeClicked}>
+                    <NavLink to='' onClick={logoClick}>
                         <img src={logo} alt=""></img>
                     </NavLink>
                 </div>
@@ -21,7 +21,7 @@ const Header = (props) => {
 }
 
 Header.propTypes = {
-    onHomeClicked: PropTypes.func.isRequired,
+    logoClick: PropTypes.func.isRequired,
     children: PropTypes.node
 }
 
