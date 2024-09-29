@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import HamburgerButton from "../hamburger-button";
+import HamburgerButton from "../HamburgerButton";
 import NavLinks from "./NavLinks";
 
 const NavBar = (props) => {
