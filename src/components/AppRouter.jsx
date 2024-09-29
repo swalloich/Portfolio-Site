@@ -7,23 +7,23 @@ import Contact from '../pages/Contact';
 import NotFound from '../pages/NotFound';
 
 const AppRouter = (props) => {
-    const { children } = props;
+  const { children } = props;
 
-    return (
-        <Router>
-            {children}
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/projects/:projectId?' element={<Projects />} />
-                <Route path='/contact' element={<Contact />} />
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </Router>
-    )
+  return (
+    <Router>
+      {children}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/projects/:projectId?' element={<Projects />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  )
 }
 
 AppRouter.propTypes = {
-    children: PropTypes.element
+  children: PropTypes.element
 }
 
 export default AppRouter;

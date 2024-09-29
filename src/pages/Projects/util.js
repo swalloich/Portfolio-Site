@@ -90,4 +90,24 @@ const tags = [
   { label: "Twig", value: "twig" },
 ]
 
-export { projectShape, projects, tags };
+/**
+ * Takes a string and converts it into an array of paragraphs and lists
+ * @param {object} description - The project object to parse
+ * @returns 
+ */
+const parseDescription = (project) => {
+  return project.description.split('\n').map((paragraph, pgIdx) => {
+    if (paragraph.startsWith('- ')) {
+      return (
+        <ul key={`${project.projectId}-${pgIdx}`}>
+          {paragraph.replace(/ ?- /g, '\n').split('\n').filter(item => item).map((listItem, liIdx) => (
+            <li key={`${project.projectId}-${pgIdx}-${liIdx}`}>{listItem}</li>
+          ))}
+        </ul>
+      )
+    }
+    return <p key={`${project.projectId}-${pgIdx}`}>{paragraph}</p>
+  })
+}
+
+export { projectShape, projects, tags, parseDescription };

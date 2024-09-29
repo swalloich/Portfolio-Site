@@ -1,38 +1,37 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Tag from "../../components/Tag"
-import { projectShape, tags } from './util'
+import { projectShape, tags, parseDescription } from './util'
 
 const ProjectView = (props) => {
-  const { project } = props;
+  const { project } = props
+  const [description, setDescription] = useState(null)
+  const [tagCollection, setTagCollection] = useState(null)
 
-  const tagCollection = project.tags.split(',').map((tag) => {
-    return (
-      <Tag key={tag}>
-        {tags.find((t) => t.value === tag).label}
-      </Tag>
-    )
-  })
-
-  const description = project.description.split('\n').map((paragraph, pgIdx) => {
-    if (paragraph.startsWith('- ')) {
-      return (
-        <ul key={`${project.projectId}-${pgIdx}`}>
-          {paragraph.replace('- ', '\n').split('\n').map((listItem, liIdx) => (
-            <li key={`${project.projectId}-${pgIdx}-${liIdx}`}>{listItem}</li>
-          ))}
-        </ul>
+  useEffect(() => {
+    if (project.description) {
+      setDescription(parseDescription(project))
+    }
+    if (project.tags) {
+      setTagCollection(
+        project.tags.split(',').map((tag) => {
+          const matching = tags.find((t) => t.value === tag)
+          return (
+            <Tag key={tag}>
+              {matching ? matching.label : tag}
+            </Tag>
+          )
+        })
       )
     }
-    return <p key={`${project.projectId}-${pgIdx}`}>{paragraph}</p>
-  })
+  }, [project])
 
   return (
     <>
       <h1>{project.title}</h1>
-      <div className="mt-3 d-flex gap-2">
+      <div className="mt-3 d-flex flex-wrap gap-2">
         {tagCollection}
       </div>
-      <hr className="mx-3" />
+      <hr className="mx-2" />
       <h2>About the Project</h2>
       {description}
     </>

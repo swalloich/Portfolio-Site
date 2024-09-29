@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     background-color: variables.$bg-gray;
+    z-index: 1;
 
     &>.jn-container {
         width: 100%;
