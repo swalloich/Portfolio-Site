@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Tag = (props) => {
     const { closable = false, children } = props;
@@ -19,8 +20,8 @@ const Tag = (props) => {
 }
 
 Tag.propTypes = {
-    closable: Boolean,
-    children: String
+    closable: PropTypes.bool,
+    children: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
 }
 
 export default Tag;

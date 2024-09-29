@@ -32,12 +32,17 @@ h3 {
 }
 
 /* Links */
-a:link, a:visited {
-    text-decoration: none;
-}
+a {
+    &:link,
+    &:visited {
+        text-decoration: none;
+    }
 
-a:not(a.btn), a:not(a.btn):visited {
-    color: variables.$pop-blue;
+    &:not(.btn) {
+        &:visited {
+            color: variables.$pop-blue;
+        }
+    }
 }
 
 /* media queries */

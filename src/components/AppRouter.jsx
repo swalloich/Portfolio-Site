@@ -14,7 +14,7 @@ const AppRouter = (props) => {
             {children}
             <Routes>
                 <Route path='/' element={<Home />} />
-                <Route path='/projects' element={<Projects />} />
+                <Route path='/projects/:projectId?' element={<Projects />} />
                 <Route path='/contact' element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
             </Routes>
