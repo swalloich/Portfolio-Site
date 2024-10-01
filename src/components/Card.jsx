@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 
 const Card = (props) => {
   const { to = null, onClick = null, children } = props
-  const [cardClasses, setCardClasses] = useState(['full-card', 'half-card-lg'])
+  const [cardClasses, setCardClasses] = useState(['jn-card'])
 
   useEffect(() => {
     if (to) {
