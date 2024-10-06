@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import propTypes from "prop-types"
 import ProjectCard from "./ProjectCard"
 import Grid from "../../components/Grid"
