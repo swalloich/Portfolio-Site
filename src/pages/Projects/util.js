@@ -1,24 +1,24 @@
 import PropTypes from "prop-types"
 
 const projectShape = PropTypes.shape({
-    projectId: PropTypes.string,
-    title: PropTypes.string,
-    projectUrls: PropTypes.arrayOf(
-      PropTypes.shape({
-        path: PropTypes.string,
-        name: PropTypes.string,
-        subPaths: PropTypes.arrayOf(
-          PropTypes.shape({
-            path: PropTypes.string,
-            name: PropTypes.string,
-          })
-        )
-      })
-    ),
-    shortDescription: PropTypes.string,
-    description: PropTypes.string,
-    tags: PropTypes.string,
-  })
+  projectId: PropTypes.string,
+  title: PropTypes.string,
+  projectUrls: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string,
+      name: PropTypes.string,
+      subPaths: PropTypes.arrayOf(
+        PropTypes.shape({
+          path: PropTypes.string,
+          name: PropTypes.string,
+        })
+      )
+    })
+  ),
+  shortDescription: PropTypes.string,
+  description: PropTypes.string,
+  tags: PropTypes.string,
+})
 
 const projects = [
   {
@@ -110,4 +110,4 @@ const parseDescription = (project) => {
   })
 }
 
-export { projectShape, projects, tags, parseDescription };
+export { parseDescription, projectShape, projects, tags };
