@@ -1,18 +1,29 @@
-import React from "react"
+import React, { useState } from "react"
+import propTypes from "prop-types"
 import ProjectCard from "./ProjectCard"
-import { projects } from "./util"
+import Grid from "../../components/Grid"
+import { projectShape } from './util'
+import useDeviceWidth from "../../scripts/projectUtils"
 
 const ProjectCardGrid = (props) => {
+  const { projects = [{}] } = props
+  const { atWidth } = useDeviceWidth()
+
   return (
-    <div className='jn-container'>
-      <h1 className='mb-5'>Projects</h1>
-      <div className='gutter-container gap-4 flex-direction-column flex-direction-md-row'>
-        {projects.map((project) => (
-          <ProjectCard key={project.projectId} project={project} />
-        ))}
-      </div>
-    </div>
+    <Grid>
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.projectId}
+          project={project}
+          columns={atWidth({default: 12, md: 6, lg: 4})}
+        />
+      ))}
+    </Grid>
   )
+}
+
+ProjectCardGrid.propTypes = {
+  projects: propTypes.arrayOf(propTypes.shape(projectShape)),
 }
 
 export default ProjectCardGrid;

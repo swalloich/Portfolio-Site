@@ -1,0 +1,15 @@
+.jn-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  box-sizing: border-box;
+
+  > * {
+    box-sizing: border-box;
+  }
+
+  @for $i from 1 through 12 {
+    .jn-col-#{$i} {
+      grid-column: span $i;
+    }
+  }
+}

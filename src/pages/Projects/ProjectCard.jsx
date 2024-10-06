@@ -2,9 +2,10 @@ import React from "react"
 import Card from "../../components/Card"
 import Tag from "../../components/Tag"
 import { projectShape, tags } from './util'
+import propTypes from "prop-types"
 
 const ProjectCard = (props) => {
-  const { project } = props
+  const { className, project } = props
 
   const tagCollection =
     project
@@ -22,7 +23,7 @@ const ProjectCard = (props) => {
       )
 
   return (
-    <Card to={`/projects/${project.projectId}`} title={project.title}>
+    <Card to={`/projects/${project.projectId}`} title={project.title} className={className}>
       <>
         <h2>{project.title}</h2>
         <hr className="mx-2" />
@@ -38,6 +39,7 @@ const ProjectCard = (props) => {
 }
 
 ProjectCard.propTypes = {
+  className: propTypes.arrayOf(propTypes.string),
   project: projectShape,
 }
 
