@@ -25,13 +25,13 @@ const Projects = () => {
 
   return (
     <main className='d-flex justify-content-center pt-5'>
-      {projectId && currentProject ? (
-        <div className='jn-container'>
+      <div className="container">
+        {projectId && currentProject ? (
           <ProjectView project={currentProject} />
-        </div>
-      ) : (
-        <ProjectCardGrid projects={projects} />
-      )}
+        ) : (
+          <ProjectCardGrid projects={projects} />
+        )}
+      </div>
     </main>
   )
 }
