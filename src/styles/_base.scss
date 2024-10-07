@@ -1,10 +1,11 @@
+@use 'sass:map';
 @use 'variables';
 
 body, #root {
     font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    background-color: variables.$bg-gray;
-    color: variables.$text-color;
+    background-color: map.get(variables.$colors, "bg-gray");
+    color: map.get(variables.$text-colors, "base-text-color");
 }
 
 #root:not(h1, h2, h3, h4, h5) {
@@ -40,7 +41,7 @@ a {
 
     &:not(.btn) {
         &:visited {
-            color: variables.$pop-blue;
+            color: map.get(variables.$colors, "pop-blue");
         }
     }
 }

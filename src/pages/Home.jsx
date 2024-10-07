@@ -1,10 +1,11 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Home = () => {
   return (
-    <main className="d-flex flex-column-reverse flex-md-row">
-      <div className="dynamic-image-content">
+    <main>
+      <div className="jn-color-banner-tall" />
+      <div className="container">
         <div className="container pt-5 px-0 px-md-5">
           <div className="ms-5 text-end">
             <h1 className="jn-font-xl ms-0">Jacob Nelson</h1>
@@ -16,9 +17,8 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="dynamic-image-container jn-bg-pop-blue"></div>
     </main>
   )
 }
 
-export default Home;
+export default Home

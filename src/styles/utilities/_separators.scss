@@ -1,9 +1,12 @@
+@use 'sass:map';
+@use '../variables';
+
 .jn-separator-300-start::before,
 .jn-separator-300-end::after,
 .jn-separator-300-top::before,
 .jn-separator-300-bottom::after {
     content: '';
-    border: 1px solid variables.$super-light-blue;
+    border: 1px solid map.get(variables.$colors, "super-light-blue");
     border-radius: 1px;
     position: static;
 }

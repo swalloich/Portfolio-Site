@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '../variables';
 
 .nav-hamburger {
@@ -7,8 +8,8 @@
     font-size: 1.75rem;
     height: 40px;
     width: 40px;
-    border: 2px solid variables.$super-light-blue;
-    color: variables.$super-light-blue;
+    border: 2px solid map.get(variables.$colors, "super-light-blue");
+    color: map.get(variables.$text-colors, "super-light-blue");
     border-radius: 5px;
 }
 

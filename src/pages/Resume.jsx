@@ -6,7 +6,7 @@ import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 const Resume = () => {
   return (
     <main className='d-flex justify-content-center'>
-      <div className='jn-container'>
+      <div className='container'>
         <h1>My Resume</h1>
         <Button
           src="https://drive.google.com/uc?export=download&id=1KvgVqopRqyh68754UuyNixVOWiG_jN9j"
