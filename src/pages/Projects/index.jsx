@@ -23,14 +23,19 @@ const Projects = () => {
     }
   }, [projectId, currentProject])
 
+  let view = null;
+  if (projectId && currentProject) {
+    view = <ProjectView project={currentProject} />;
+  } else if (projects && projects.length > 0) {
+    view = <ProjectCardGrid projects={projects} />;
+  } else {
+    view = (<p>No projects found.</p>)
+  }
+
   return (
     <main className='d-flex justify-content-center pt-5'>
       <div className="container">
-        {projectId && currentProject ? (
-          <ProjectView project={currentProject} />
-        ) : (
-          <ProjectCardGrid projects={projects} />
-        )}
+        {view}
       </div>
     </main>
   )

@@ -1,12 +1,12 @@
 import PropTypes from "prop-types"
 
 const projectShape = PropTypes.shape({
-  projectId: PropTypes.string,
-  title: PropTypes.string,
+  projectId: PropTypes.string, // recommended in case the projects are loaded using a loop.
+  title: PropTypes.string.isRequired,
   projectUrls: PropTypes.arrayOf(
     PropTypes.shape({
-      path: PropTypes.string,
-      name: PropTypes.string,
+      path: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
       subPaths: PropTypes.arrayOf(
         PropTypes.shape({
           path: PropTypes.string,
@@ -15,8 +15,8 @@ const projectShape = PropTypes.shape({
       )
     })
   ),
-  shortDescription: PropTypes.string,
-  description: PropTypes.string,
+  shortDescription: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   tags: PropTypes.string,
 })
 
