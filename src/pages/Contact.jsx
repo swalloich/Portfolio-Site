@@ -9,7 +9,7 @@ const Contact = () => {
       <div className='cointainer-fluid'>
         <div className='row flex-column align-items-center flex-lg-row h-100'>
           <div className='col-10 col-md-6 col-lg-8 d-flex justify-content-end align-items-center mt-5 mt-lg-0 text-end jn-separator-300-end'>
-            <h1 className='jn-font-l jn-font-xl-lg pe-5'>I can help bring your company's vision to life.</h1>
+            <h1 className='jn-font-l jn-font-xl-lg pe-5 ms-0'>I can help bring your company's vision to life.</h1>
           </div>
           <div className='col-10 col-md-6 col-lg-4 d-flex mt-3 mt-lg-0 align-items-center jn-separator-300-start jn-separator-lg-none'>
             <div className="ps-5 ps-lg-3">

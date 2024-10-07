@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 
 const Grid = (props) => {
-  const { children, className = [], } = props
+  const { children, className = [], gap = 3 } = props
   const [childrenWithColumns, setChildrenWithColumns] = useState([])
 
   useEffect(() => {
@@ -19,8 +19,10 @@ const Grid = (props) => {
     setChildrenWithColumns(updatedChildren)
   }, [children])
 
+  const gapClass = gap >= 0 && gap <= 5 ? `gap-${gap}` : 'gap-1'
+
   return (
-    <div className={`jn-grid ${className.join(' ')}`}>
+    <div className={`jn-grid ${gapClass} ${className.join(' ')}`}>
       {childrenWithColumns}
     </div>
   )
@@ -29,6 +31,7 @@ const Grid = (props) => {
 Grid.propTypes = {
   children: PropTypes.node,
   className: PropTypes.arrayOf(PropTypes.string),
+  gap: PropTypes.number,
 }
 
 export default Grid
