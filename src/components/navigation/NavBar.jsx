@@ -1,23 +1,55 @@
-import React from "react";
-import PropTypes from 'prop-types';
-import HamburgerButton from "../HamburgerButton";
-import NavLinks from "./NavLinks";
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
+import { HamburgerButton, NavLinks, useHeaderContext, Row } from '..'
+import colors from '../../styles/colors'
+
+const navItemCss = css`
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  a {
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: ${colors.textColor};
+    font-weight: 600;
+    font-size: 16px;
+
+    &.active {
+      color: ${colors.popBlue};
+    }
+
+    &:visited:not(.active) {
+      color: ${colors.textColor};
+    }
+  }
+`
 
 const NavBar = (props) => {
-  const { children, isOpen: isMenuOpen, menuClick: setIsOpen, navClassName = [], ulClassName = [] } = props;
+  const { links = [] } = props
+  const { isMenuOpen, setIsMenuOpen, toggleMenu } = useHeaderContext()
 
   return (
-    <>
+    <Row justify="space-between" align="center">
       <NavLinks
         isMenuOpen={isMenuOpen}
-        onClick={setIsOpen}
-        navClassName={navClassName}
-        ulClassName={ulClassName}
+        onClick={() => setIsMenuOpen(false)}
       >
-        {children}
+        {links.map((link) => (
+          <li css={navItemCss} key={link.path}>
+            <NavLink to={link.path} onClick={toggleMenu}>
+              {link.name}
+            </NavLink>
+          </li>
+        ))}
       </NavLinks>
-      <HamburgerButton onClick={setIsOpen} isMenuOpen={isMenuOpen} />
-    </>
+      <HamburgerButton onClick={toggleMenu} isMenuOpen={isMenuOpen} />
+    </ Row>
   )
 }
 

@@ -1,48 +1,63 @@
-import React, { useState, useEffect, useCallback } from "react";
-import PropTypes from "prop-types";
-
-const baseNavClasses = ['nav-bar', 'jn-visually-hidden', 'jn-hidden'];
-const baseUlClasses = ['jn-visually-hidden', 'jn-hidden'];
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import PropTypes from "prop-types"
+import { useHeaderContext } from '..'
+import colors from '../../styles/colors'
 
 const NavLinks = (props) => {
-  const { children, isMenuOpen, navClassName, onClick = [], ulClassName = [] } = props;
+  const { children } = props
+  const { isMenuOpen, setIsMenuOpen } = useHeaderContext()
 
-  const [navClasses, setNavClasses] = useState([...baseNavClasses, ...navClassName]);
-  const [ulClasses] = useState([...baseUlClasses, ...ulClassName]);
+  const navLinksCss = css`
+    display: flex;
+    align-items: center;
 
-  const openNavMenu = useCallback(() => {
-    if (navClasses.includes('jn-hidden')) {
-      setNavClasses((prev) => prev.filter((c) => c !== 'jn-hidden'));
+    ul {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      box-shadow: ${isMenuOpen ? '-10px 0 10px 1px rgba(0, 0, 0, 0.5)' : 'none'};
+      clip-path: inset( 0px -10px -10px -15px);
     }
-    if (navClasses.includes('jn-visually-hidden')) {
-      setTimeout(() => {
-        setNavClasses(navClasses.filter((c) => c !== 'jn-visually-hidden'))
-      }, 50);
-    }
-  }, [navClasses, setNavClasses]);
 
-  const closeNavMenu = useCallback(() => {
-    if (!navClasses.includes('jn-visually-hidden')) {
-      setNavClasses((prev) => [...prev, 'jn-visually-hidden']);
-    }
-    if (!navClasses.includes('jn-hidden')) {
-      setTimeout(() => {
-        setNavClasses((prev) => [...prev, 'jn-hidden']);
-      }, 200);
-    }
-  }, [navClasses, setNavClasses]);
+    @media (max-width: 600px) {
+      display: flex;
+      position: fixed;
+      left: 100%;
+      top: 96px;
+      height: 100%;
+      justify-content: flex-end;
+      align-items: flex-start;
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      openNavMenu();
-    } else {
-      closeNavMenu();
+      ul {
+        position: fixed;
+        flex-direction: column;
+        background-color: ${colors.bgGray};
+        align-items: end;
+        height: 100%;
+        width: 50%;
+        left: ${isMenuOpen ? '50%' : '100%'};
+        transition: left 200ms ease;
+      }
+
+      li {
+        &:not(:last-child) {
+          margin: 0;
+        }
+
+        a {
+          margin: 0 40px 20px 0;
+          height: 25px;
+        }
+      }
     }
-  }, [isMenuOpen, openNavMenu, closeNavMenu]);
+  `
 
   return (
-    <nav className={navClasses.join(' ')} onClick={onClick}>
-      <ul className={ulClasses.join(' ')}>
+    <nav css={navLinksCss} onClick={() => setIsMenuOpen(false)}>
+      <ul>
         {children}
       </ul>
     </nav>

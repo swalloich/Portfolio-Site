@@ -1,23 +1,27 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Row } from '../components'
+import headshot from '../images/jacob_headshot.jpg'
+import { Image, LayoutBand } from '../components'
 
 const Home = () => {
   return (
-    <main>
+    <>
       <div className="jn-color-banner-tall" />
-      <div className="container">
-        <div className="container pt-5 px-0 px-md-5">
-          <div className="ms-5">
-            <h2 className="jn-font-l mb-5">Need a website?</h2>
-            <h1 className="jn-font-xl ms-0">Jacob Nelson</h1>
-            <p>Web Developer</p>
-          </div>
+      <LayoutBand>
+        <div className="pt-5 px-0 px-md-5">
+          <Row>
+            <div>
+              <Image src={headshot} alt="Jacob Nelson" />
+            </div>
+            <h1>Engineering Web Solutions With Precision</h1>
+          </Row>
           <div className="mt-5 ms-5 text-end">
             <NavLink className="btn btn-primary d-block mt-3 w-fit-content" to="/projects">Get Started</NavLink>
           </div>
         </div>
-      </div>
-    </main>
+      </ LayoutBand>
+    </>
   )
 }
 

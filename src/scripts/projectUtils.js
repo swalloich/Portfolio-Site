@@ -110,7 +110,7 @@ const useDeviceWidth = () => {
   const atWidth = (values) => {
     if (currentWidth) {
       const breakpoints = Object.keys(values).filter(key => key !== 'default')
-      let selectedBreakpoint = breakpoints.includes('sm') ? 'xs' : 'default'
+      let selectedBreakpoint = 'default'
 
       for (const breakpoint of breakpoints) {
         if (widthBreakpoints[breakpoint].lte(currentWidth)) {
