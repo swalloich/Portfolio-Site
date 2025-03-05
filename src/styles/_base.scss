@@ -17,21 +17,6 @@ main {
     width: 100%;
 }
 
-main>.jn-container {
-    max-width: 1000px;
-    width: 100%;
-}
-
-/* Headings */
-
-h1:not(.header h1) {
-    margin-left: 30px;
-}
-
-h3 {
-    margin-left: 20px;
-}
-
 /* Links */
 a {
     &:link,
@@ -43,42 +28,5 @@ a {
         &:visited {
             color: map.get(variables.$colors, "pop-blue");
         }
-    }
-}
-
-/* media queries */
-@media only screen and (max-width: 1800px) {
-    main>.jn-container {
-        max-width: 900px;
-    }
-}
-
-@media only screen and (max-width: 1400px) {
-    main>.jn-container {
-        max-width: 800px;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    main>.jn-container {
-        max-width: 700px;
-    }
-}
-
-@media only screen and (max-width: 1000px) {
-    main>.jn-container {
-        max-width: 550px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    main>.jn-container {
-        max-width: 350px;
-    }
-}
-
-@media only screen and (max-width: 400px) {
-    main>.jn-container {
-        max-width: 300px;
     }
 }

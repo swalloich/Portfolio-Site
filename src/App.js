@@ -4,6 +4,7 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
 import { PageWrapper } from './components'
+import NotFound from './pages/NotFound'
 
 const links = [
     { name: 'Home', path: '/' },
@@ -19,6 +20,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/projects/*" element={<Projects />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="*" element={<NotFound />} />
                 </Route>
             </Routes>
         </BrowserRouter>
