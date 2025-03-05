@@ -14,7 +14,7 @@ const headerCss = css`
   background-color: ${colors.bgGray};
   z-index: 1;
 
-  @media (max-width: 600px) {
+  @media (max-width: 576px) {
     position: sticky;
     top: -1px;
   }

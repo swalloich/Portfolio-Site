@@ -22,7 +22,7 @@ const NavLinks = (props) => {
       clip-path: inset( 0px -10px -10px -15px);
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 576px) {
       display: flex;
       position: fixed;
       left: 100%;

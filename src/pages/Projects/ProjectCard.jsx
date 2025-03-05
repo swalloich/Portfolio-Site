@@ -1,7 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
-import Card from "../../components/Card"
-import Tag from "../../components/Tag"
+import { Card, Tag } from '../../components'
 import { projectShape } from './util'
 import propTypes from "prop-types"
 import { useProjectContext } from "./ProjectProvider"

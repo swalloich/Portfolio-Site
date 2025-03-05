@@ -1,11 +1,10 @@
 import React from "react"
 import propTypes from "prop-types"
 import ProjectCard from "./ProjectCard"
-import Grid from "../../components/Grid"
 import { projectShape } from './util'
 import useDeviceWidth from "../../scripts/projectUtils"
 import { useProjectContext } from "./ProjectProvider"
-import { LayoutBand } from "../../components"
+import { Grid, LayoutBand } from "../../components"
 
 const ProjectCardGrid = () => {
   const { atWidth } = useDeviceWidth()

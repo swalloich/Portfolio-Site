@@ -22,7 +22,7 @@ const HamburgerButton = (props) => {
   color: ${colors.superLightBlue};
   border-radius: 5px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 576px) {
     display: flex;
   }
 `
