@@ -1,22 +1,48 @@
-import React from "react"
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react"
 import PropTypes from "prop-types"
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import colors from "../styles/colors"
 
-const Card = (props) => {
-  const { to = null, onClick = null, className = [], children } = props
-  const cardClasses = ['jn-card', ...className]
-  if (to) {
-    cardClasses.push('clickable')
+export default function Card({ children, onClick, to, ...props }) {
+  const cardCss = css`
+    align-items: stretch;
+    display: flex;
+    border: 2px solid ${colors.superLightBlue};
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: ${colors.textColor} !important;
+    flex-direction: column;
+    padding: 20px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.025);
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  `
+
+  if (to?.startsWith('/')) {
+    return (
+      <NavLink css={cardCss} to={to} onClick={onClick} {...props}>
+        {children}
+      </NavLink>
+    )
   }
-
-  return to ? (
-    <NavLink to={to} className={cardClasses.join(' ')} onClick={onClick}>
+  if (!to) {
+    return (
+      <button css={cardCss} onClick={onClick} {...props}>
+        {children}
+      </button>
+    )
+  }
+  return (
+    <Link css={cardCss} to={to} onClick={onClick} {...props}>
       {children}
-    </NavLink>
-  ) : (
-    <button className={cardClasses.join(' ')} onClick={onClick}>
-      {children}
-    </button>
+    </Link>
   )
 }
 
@@ -26,5 +52,3 @@ Card.propTypes = {
   className: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func,
 }
-
-export default Card;
