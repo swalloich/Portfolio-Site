@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from 'react'
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-const Grid = (props) => {
-  const { children, className = [], gap = 3 } = props
-  const [childrenWithColumns, setChildrenWithColumns] = useState([])
-
-  useEffect(() => {
-    const updatedChildren = React.Children.map(children, (child) => {
-      if (child.props.columns === undefined) {
-        return child
-      }
-      const classes = child.props.className ? child.props.className : []
-      classes.push(`jn-col-${child.props.columns}`)
-      return React.cloneElement(child, {
-        className: classes,
-      })
-    })
-    setChildrenWithColumns(updatedChildren)
-  }, [children])
-
+const Grid = ({ children, gap = 3, ...props }) => {
+  const gridCss = css`
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    box-sizing: border-box;
+    width: 100%;
+  `
   const gapClass = gap >= 0 && gap <= 5 ? `gap-${gap}` : 'gap-1'
+  const modifiedChildren = React.Children.map(children, (child) => 
+      <div css={css`grid-column: span ${child.props.columns};`}>
+        {child}
+      </div>
+  )
 
   return (
-    <div className={`jn-grid ${gapClass} ${className.join(' ')}`}>
-      {childrenWithColumns}
+    <div css={gridCss} className={gapClass} {...props}>
+      {modifiedChildren}
     </div>
   )
 }
