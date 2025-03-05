@@ -1,45 +1,32 @@
-import React, { useEffect, useState } from "react"
-import Tag from "../../components/Tag"
-import { projectShape, tags, parseDescription } from './util'
+import React from "react"
+import { useParams } from 'react-router-dom'
+import { parseDescription } from './util'
+import { LayoutBand, Tag } from "../../components"
+import { useProjectContext } from "./ProjectProvider"
 
-const ProjectView = (props) => {
-  const { project } = props
-  const [description, setDescription] = useState(null)
-  const [tagCollection, setTagCollection] = useState(null)
+const ProjectView = () => {
+  const { projectId } = useParams()
+  const { projects, tags } = useProjectContext()
 
-  useEffect(() => {
-    if (project.description) {
-      setDescription(parseDescription(project))
-    }
-    if (project.tags) {
-      setTagCollection(
-        project.tags.split(',').map((tag) => {
-          const matching = tags.find((t) => t.value === tag)
-          return (
-            <Tag key={tag}>
-              {matching ? matching.label : tag}
-            </Tag>
-          )
-        })
-      )
-    }
-  }, [project])
+  const project = projects[projectId]
 
   return (
-    <>
+    <LayoutBand className="mt-5">
       <h1>{project.title}</h1>
       <div className="mt-3 d-flex flex-wrap gap-2">
-        {tagCollection}
+        {project.tags.split(',').map((tag) => {
+          return (
+            <Tag key={tag}>
+              {tags[tag]}
+            </Tag>
+          )
+        })}
       </div>
       <hr className="mx-2" />
       <h2>About the Project</h2>
-      {description}
-    </>
+      {parseDescription(projectId, project.description)}
+    </ LayoutBand>
   )
-}
-
-ProjectView.propTypes = {
-  project: projectShape,
 }
 
 export default ProjectView

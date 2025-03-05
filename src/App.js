@@ -17,7 +17,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<PageWrapper links={links} />}>
                     <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
+                    <Route path="/projects/*" element={<Projects />} />
                     <Route path="/contact" element={<Contact />} />
                 </Route>
             </Routes>

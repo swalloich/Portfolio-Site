@@ -1,26 +1,13 @@
 import React from "react"
 import Card from "../../components/Card"
 import Tag from "../../components/Tag"
-import { projectShape, tags } from './util'
+import { projectShape } from './util'
 import propTypes from "prop-types"
+import { useProjectContext } from "./ProjectProvider"
 
 const ProjectCard = (props) => {
   const { className, project } = props
-
-  const tagCollection =
-    project
-      ? (
-        project.tags.split(',').map((tag) => {
-          const matching = tags.find((t) => t.value === tag)
-          return (
-            <Tag key={tag}>
-              {matching ? matching.label : tag}
-            </Tag>
-          )
-        })
-      ) : (
-        ''
-      )
+  const { tags } = useProjectContext()
 
   return (
     <Card to={`/projects/${project.projectId}`} title={project.title} className={className}>
@@ -30,7 +17,11 @@ const ProjectCard = (props) => {
         <div className="card-body">
           <p>{project.shortDescription}</p>
           <div className="d-flex gap-2 flex-wrap">
-            {tagCollection}
+            {project.tags.split(',').map((tag) => (
+              <Tag key={tag}>
+                {tags[tag]}
+              </Tag>
+            ))}
           </div>
         </div>
       </>

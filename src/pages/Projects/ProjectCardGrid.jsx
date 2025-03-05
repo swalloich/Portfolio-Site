@@ -4,13 +4,15 @@ import ProjectCard from "./ProjectCard"
 import Grid from "../../components/Grid"
 import { projectShape } from './util'
 import useDeviceWidth from "../../scripts/projectUtils"
+import { useProjectContext } from "./ProjectProvider"
+import { LayoutBand } from "../../components"
 
-const ProjectCardGrid = (props) => {
-  const { projects = [] } = props
+const ProjectCardGrid = () => {
   const { atWidth } = useDeviceWidth()
+  const { projects } = useProjectContext()
 
-  const projectCards = projects.length > 0 ? (
-    projects.map((project) => (
+  const projectCards = Object.values(projects).length > 0 ? (
+    Object.values(projects).map((project) => (
       <ProjectCard
         key={project.projectId}
         project={project}
@@ -22,9 +24,11 @@ const ProjectCardGrid = (props) => {
   )
 
   return (
-    <Grid>
-      {projectCards}
-    </Grid>
+    <LayoutBand className="mt-5">
+      <Grid>
+        {projectCards}
+      </Grid>
+    </LayoutBand>
   )
 }
 
