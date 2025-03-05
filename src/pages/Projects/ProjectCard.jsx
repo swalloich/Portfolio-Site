@@ -1,4 +1,5 @@
-import React from "react"
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react'
 import Card from "../../components/Card"
 import Tag from "../../components/Tag"
 import { projectShape } from './util'
@@ -14,16 +15,16 @@ const ProjectCard = (props) => {
       <>
         <h2>{project.title}</h2>
         <hr className="mx-2" />
-        <div className="card-body">
+        <div css={css`flex: 1 0;`}>
           <p>{project.shortDescription}</p>
-          <div className="d-flex gap-2 flex-wrap">
+        </div>
+        <div className="d-flex gap-2 flex-wrap">
             {project.tags.split(',').map((tag) => (
               <Tag key={tag}>
                 {tags[tag]}
               </Tag>
             ))}
           </div>
-        </div>
       </>
     </Card>
   )
