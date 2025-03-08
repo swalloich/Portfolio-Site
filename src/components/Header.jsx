@@ -13,6 +13,7 @@ const headerCss = css`
   justify-content: center;
   background-color: ${colors.bgGray};
   z-index: 1;
+  box-shadow: 0 4px 6px ${colors.boxShadow};
 
   @media (max-width: 576px) {
     position: sticky;
@@ -44,7 +45,7 @@ const Header = ({ links }) => {
   }, [handleOutsideClick, isMenuOpen])
 
   return (
-    <header css={headerCss} className='box-shadow-bottom' ref={headerRef}>
+    <header css={headerCss} ref={headerRef}>
       <LayoutBand className='py-3'>
         <Row justify={atWidth({ default: 'space-between', sm: 'start' })} align='center'>
           <div className={`logo ${atWidth({ default: '', sm: 'divider-right' })}`}>

@@ -15,8 +15,8 @@ const Home = () => {
           <Grid gap={atWidth({ default: 0, md: 5 })}>
             <Image columns={atWidth({ default: 12, md: 5, lg: 4 })} src={headshot} alt="Jacob Nelson" />
             <div columns={atWidth({ default: 12, md: 7, lg: 8 })}>
-              <h1 className='jn-font-xl'>Jacob Nelson</h1>
-              <p className="jn-font-l">Engineering web solutions with precision</p>
+              <h1 className='jn-font-4'>Jacob Nelson</h1>
+              <p className="jn-font-2">Engineering web solutions with precision</p>
             </div>
           </Grid>
           <div className="mt-5 ms-5 text-end">
