@@ -11,7 +11,7 @@ const Contact = () => {
           <h1 className='jn-font-2 jn-font-xl-4 pe-4 pe-lg-5 ms-0'>I can help bring your company's vision to life.</h1>
         </div>
         <div className='col-12 col-md-4 d-flex mt-3 mt-lg-0 align-items-center jn-separator-300-start jn-separator-md-none'>
-          <div className="ps-1">
+          <div className="ps-4 ps-md-1">
             <h2 className='mt-0'>Find me at:</h2>
             <a href="mailto:nels.jac42@gmail.com">nels.jac42@gmail.com</a>
             <div className='d-flex align-items-center mt-3'>
