@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router'
 import { parseDescription } from './util'
 import { LayoutBand, Tag } from "../../components"
 import { useProjectContext } from "./ProjectProvider"

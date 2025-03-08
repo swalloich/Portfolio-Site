@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router'
 import ProjectCardGrid from './ProjectCardGrid'
 import ProjectView from './ProjectView'
 import { ProjectProvider } from './ProjectProvider'

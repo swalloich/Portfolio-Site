@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router'
 import { HamburgerButton, NavLinks, useHeaderContext, Row } from '..'
 import colors from '../../styles/colors'
 

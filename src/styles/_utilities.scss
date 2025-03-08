@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'variables';
-@import 'utilities/separators';
+@use 'utilities/separators';
 
 .box-shadow-top {
   box-shadow: 0 calc(-1 * variables.$box-shadow-offset) variables.$box-shadow-blur-radius map.get(variables.$colors, "box-shadow-color");

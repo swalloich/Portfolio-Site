@@ -1,8 +1,7 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Grid } from '../components'
+import { NavLink } from 'react-router'
 import headshot from '../images/jacob_headshot.jpg'
-import { Image, LayoutBand } from '../components'
+import { Grid, Image, LayoutBand } from '../components'
 import useDeviceWidth from '../scripts/projectUtils'
 
 const Home = () => {
@@ -13,11 +12,11 @@ const Home = () => {
       <div className="jn-color-banner-tall" />
       <LayoutBand>
         <div className="pt-5 px-0 px-md-5">
-          <Grid>
-            <Image columns={atWidth({ default: 12, lg: 4})} src={headshot} alt="Jacob Nelson" />
-            <div columns={atWidth({ default: 12, lg: 8})}>
-              <h1>Jacob Nelson</h1>
-              <p>Engineering web solutions with precision</p>
+          <Grid gap={atWidth({ default: 0, md: 5 })}>
+            <Image columns={atWidth({ default: 12, md: 5, lg: 4 })} src={headshot} alt="Jacob Nelson" />
+            <div columns={atWidth({ default: 12, md: 7, lg: 8 })}>
+              <h1 className='jn-font-xl'>Jacob Nelson</h1>
+              <p className="jn-font-l">Engineering web solutions with precision</p>
             </div>
           </Grid>
           <div className="mt-5 ms-5 text-end">

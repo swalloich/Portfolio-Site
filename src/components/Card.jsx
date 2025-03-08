@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react"
 import PropTypes from "prop-types"
-import { Link, NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router"
 import colors from "../styles/colors"
 
 export default function Card({ children, onClick, to, ...props }) {

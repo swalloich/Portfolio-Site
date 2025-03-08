@@ -2,7 +2,7 @@
 import { css } from '@emotion/react'
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router'
 import logo from "../images/logo.png"
 import { Icon, LayoutBand, NavBar, Row } from '.'
 import colors from '../styles/colors'
