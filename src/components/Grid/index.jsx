@@ -39,9 +39,9 @@ const Grid = ({ children, className, colGap, gap, rowGap, ...props }) => {
 
 /**
  * Helper function to get gap classes
- * @param {*} colGap -
- * @param {*} rowGap 
- * @returns 
+ * @param {*} colGap - The gap between the columns
+ * @param {*} rowGap - The gap between the rows
+ * @returns {Array<String} - The gap classes
  */
 function getGapClasses(colGap, rowGap) {
   if (!colGap && !rowGap) {
