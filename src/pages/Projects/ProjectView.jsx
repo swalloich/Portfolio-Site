@@ -9,6 +9,16 @@ const ProjectView = () => {
   const { projects, tags } = useProjectContext()
 
   const project = projects[projectId]
+  let statusString = ''
+  if (project?.projectStatus) {
+    if (project.projectStatus === 'current') {
+      statusString = 'Current'
+    } else {
+      const projectDate = new Date(project.projectStatus)
+      const longDate = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(projectDate)
+      statusString = `Last worked on in ${longDate} ${projectDate.getFullYear()}`
+    }
+  }
 
   return (
     <LayoutBand className="mt-4">
@@ -51,6 +61,15 @@ const ProjectView = () => {
             )
             )}
           </ul>
+        </>
+      )}
+      {statusString && (
+        <>
+          <hr className="mx-2" />
+          <p>
+            <b>Project status: </b>
+            {statusString}
+          </p>
         </>
       )}
     </ LayoutBand>
