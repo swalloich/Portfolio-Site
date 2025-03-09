@@ -48,8 +48,10 @@ const NavLinks = (props) => {
         }
 
         a {
-          margin: 0 40px 20px 0;
+          margin: 5px 40px 5px 0;
           height: 25px;
+          box-sizing: content-box;
+          min-height: fit-content;
         }
       }
     }

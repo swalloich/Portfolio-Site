@@ -24,7 +24,7 @@ const ProjectCardGrid = () => {
 
   return (
     <LayoutBand className="mt-5">
-      <Grid>
+      <Grid gap={atWidth({default: 3, sm: 4})}>
         {projectCards}
       </Grid>
     </LayoutBand>
