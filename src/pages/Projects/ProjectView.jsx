@@ -1,5 +1,5 @@
 import React from "react"
-import { useParams } from 'react-router'
+import { useParams, NavLink } from 'react-router'
 import { parseDescription } from './util'
 import { LayoutBand, Tag } from "../../components"
 import { useProjectContext } from "./ProjectProvider"
@@ -11,8 +11,9 @@ const ProjectView = () => {
   const project = projects[projectId]
 
   return (
-    <LayoutBand className="mt-5">
-      <h1>{project.title}</h1>
+    <LayoutBand className="mt-4">
+      <NavLink to="/projects" className="jn-font-gray">&larr; Back to Projects</NavLink>
+      <h1 className="mt-3">{project.title}</h1>
       <div className="mt-3 d-flex flex-wrap gap-2">
         {project.tags.split(',').map((tag) => {
           return (

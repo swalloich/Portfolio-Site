@@ -22,7 +22,12 @@ $font-prefix: 'jn-font-';
 /* Font color */
 @each $color, $value in variables.$colors {
   .jn-font-#{$color} {
-    color: $value;
+    color: $value !important;
+
+    &:hover,
+    &:visited {
+      color: $value;
+    }
   }
 }
 

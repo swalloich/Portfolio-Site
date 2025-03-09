@@ -8,10 +8,11 @@ export function ProjectProvider({ children }) {
     'portfolioProject': {
       projectId: 'portfolioProject',
       title: "This Site",
-      shortDescription: "I designed a simple and powerful site to comprehensively demonstrate my many skills.",
+      shortDescription: "A simple and powerful site that comprehensively showcases my skills.",
       description: "- Designed a simple and powerful site to comprehensively communicate showcase my dozens of skills in a minimal number of pages. - Outlined a vision for static and functional portfolio site components to minimize development time.",
       tags: "react,css,bootstrap,javaScript,oracleCloud,git,responsiveDesign"
     },
+    
     "educationSiteSearch":{
       projectId: "educationSiteSearch",
       title: "Education Site Search",
