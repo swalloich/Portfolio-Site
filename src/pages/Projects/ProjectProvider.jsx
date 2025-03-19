@@ -8,6 +8,12 @@ export function ProjectProvider({ children }) {
     'portfolioProject': {
       projectId: 'portfolioProject',
       title: "This Site",
+      projectUrls: [
+        {
+          path: "https://github.com/swalloich/portfolio-site",
+          name: "GitHub Repository"
+        }
+      ],
       shortDescription: "A simple and powerful site that comprehensively showcases my skills.",
       description: "- Designed a simple and powerful site to comprehensively communicate showcase my dozens of skills in a minimal number of pages. - Outlined a vision for static and functional portfolio site components to minimize development time.",
       tags: "react,css,bootstrap,javaScript,oracleCloud,git,responsiveDesign",

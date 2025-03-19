@@ -6,9 +6,7 @@ import { HamburgerButton, NavLinks, useHeaderContext, Row } from '..'
 import colors from '../../styles/colors'
 
 const navItemCss = css`
-  &:not(:last-child) {
-    margin-right: 20px;
-  }
+  margin-left: 20px;
 
   a {
     padding: 10px;

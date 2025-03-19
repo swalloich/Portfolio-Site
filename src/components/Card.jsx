@@ -13,6 +13,7 @@ export default function Card({ children, onClick, to, ...props }) {
     box-sizing: border-box;
     color: ${colors.textColor} !important;
     flex-direction: column;
+    height: 100%;
     padding: 20px;
     transition: all 0.2s ease-in-out;
 
