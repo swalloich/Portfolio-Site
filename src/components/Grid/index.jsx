@@ -2,6 +2,7 @@
 import { css } from '@emotion/react'
 import React from 'react'
 import PropTypes from 'prop-types'
+import GridCell from './GridCell'
 
 /**
  * Grid component
@@ -19,11 +20,17 @@ const Grid = ({ children, className, colGap, gap, rowGap, ...props }) => {
     box-sizing: border-box;
     width: 100%;
   `
-  const modifiedChildren = React.Children.map(children, (child) => 
-      <div css={css`grid-column: span ${child.props.columns};`}>
+  const modifiedChildren = React.Children.map(children, (child) => {
+    if (child.type === GridCell) {
+      return child
+    }
+    const columns = child.props.columns || 12
+    return (
+      <GridCell columns={columns}>
         {child}
-      </div>
-  )
+      </GridCell>
+    )
+  })
 
   if (gap) {
     colGap = gap

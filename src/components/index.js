@@ -1,6 +1,7 @@
 export { default as Button } from './Button.jsx'
 export { default as Card } from './Card.jsx'
 export { default as Grid } from './Grid'
+export { default as GridCell } from './Grid/GridCell.jsx'
 export { default as HamburgerButton } from './HamburgerButton.jsx'
 export { default as Header } from './Header.jsx'
 export { HeaderProvider, useHeaderContext } from './Header.jsx'
