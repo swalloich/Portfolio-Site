@@ -1,29 +1,37 @@
+@use "sass:map";
+
 /**********************************************
  * Colors
  *********************************************/
-$almost-black: #000f1b;
-$gray: #666;
-$dark-gray: #333;
-$bg-gray: #272D33;
-$orange: #FF9C00;
-$light-blue: #8AC8FF;
-$pop-blue: #0086FF;
-$dark-blue: #005EB3;
-$extra-light-blue: #60686e;
-$super-light-blue: #abb7c0;
-$super-light-blue-t: #abb7c040;
-$box-shadow-color: #0000001a;
+$colors: (
+  "almost-black": #000f1b,
+  "gray": #666,
+  "dark-gray": #333,
+  "bg-gray": #272D33,
+  "orange": #FF9C00,
+  "light-blue": #8AC8FF,
+  "pop-blue": #0086FF,
+  "dark-blue": #005EB3,
+  "extra-light-blue": #60686e,
+  "super-light-blue": #abb7c0,
+  "box-shadow-color": #0000001a,
+  "super-light-blue-t": #abb7c040,
+);
 
 /* Text Colors */
-$text-color: #FFFAFA;
+$text-colors: (
+  "base-text-color": #FFFAFA,
+  "super-light-blue-t": #abb7c040,
+  "super-light-blue": #abb7c0,
+);
 
 /* Logo Colors */
 $github-logo-color: white;
 $linkedin-blue: #0077B5;
 
 /************************************************
-* Size & Spacing
-***********************************************/
+ * Size & Spacing
+ ***********************************************/
 /* Box shadow sizing */
 $box-shadow-offset: 4px;
 $box-shadow-blur-radius: 6px;
@@ -31,3 +39,21 @@ $box-shadow-blur-radius: 6px;
 /* Size & width */
 $header-height: 85px;
 $gap-width: 10px;
+
+$color-banner-heights: (
+  "short": 25px,
+  "medium": 50px,
+  "tall": 100px,
+);
+
+/************************************************
+ * Breakpoints
+ ***********************************************/
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);

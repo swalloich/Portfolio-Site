@@ -1,49 +1,30 @@
-import { useState } from "react";
-import { NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router'
+import "./styles/main.scss"
+import Contact from './pages/Contact'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
+import { PageWrapper } from './components'
+import NotFound from './pages/NotFound'
 
-// components
-import AppRouter from "./components/AppRouter";
-import Header from "./components/header";
-import NavBar from './components/nav-bar'
-import CloseNavLink from './components/close-nav-link';
+const links = [
+  { name: 'Home', path: '/' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Contact', path: '/contact' }
+]
 
-// stylesheets
-import "./styles/main.scss";
-
-function App() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-    }
-
-    const closeMenu = () => {
-        setIsMenuOpen(false);
-    }
-
-    return (
-        <AppRouter>
-            <Header onHomeClicked={closeMenu}>
-                <NavBar navBarId="main-nav" onMenuClick={toggleMenu} onMenuClose={closeMenu} isMenuOpen={isMenuOpen}>
-                    <CloseNavLink onLinkClicked={closeMenu}>
-                        <NavLink to='/' activeclassname="active">
-                            Home
-                        </NavLink>
-                    </CloseNavLink>
-                    <CloseNavLink onLinkClicked={closeMenu}>
-                        <NavLink to='/projects' activeclassname="active">
-                            Projects
-                        </NavLink>
-                    </CloseNavLink>
-                    <CloseNavLink onLinkClicked={closeMenu}>
-                        <NavLink to='/contact' activeclassname="active">
-                            Contact
-                        </NavLink>
-                    </CloseNavLink>
-                </NavBar>
-            </Header>
-        </AppRouter>
-    );
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PageWrapper links={links} />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects/*" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;

@@ -1,213 +1,124 @@
+@use 'sass:map';
 @use 'variables';
-
-@import 'utilities/animations';
-@import 'utilities/separators';
-
-.box-shadow-top {
-    box-shadow: 0 calc(-1 * variables.$box-shadow-offset) variables.$box-shadow-blur-radius variables.$box-shadow-color;
-}
-
-.box-shadow-bottom {
-    box-shadow: 0 variables.$box-shadow-offset variables.$box-shadow-blur-radius variables.$box-shadow-color;
-}
+@use 'utilities/separators';
 
 /* Size */
 .w-fit-content {
-    width: fit-content;
-}
-
-/* Border radius */
-.border-r-10 {
-    border-radius: 10px;
+  width: fit-content;
 }
 
 /* Background color */
-.jn-bg-pop-blue {
-    background-color: variables.$pop-blue;
+@each $color, $value in variables.$colors {
+  .jn-bg-#{$color} {
+    background-color: $value;
+  }
 }
 
-.jn-bg-super-light-blue-t {
-    background-color: variables.$super-light-blue-t;
-}
+/********************************************************************
+ * Font
+ *******************************************************************/
+$font-prefix: 'jn-font-';
 
 /* Font color */
-.jn-font-sl-blue {
-    color: variables.$super-light-blue;
-}
+@each $color, $value in variables.$colors {
+  .jn-font-#{$color} {
+    color: $value !important;
 
-.jn-font-dark-gray {
-    color: variables.$dark-gray;
+    &:hover,
+    &:visited {
+      color: $value;
+    }
+  }
 }
 
 .jn-font-github-logo-color {
-    color: variables.$github-logo-color !important;
+  color: variables.$github-logo-color !important;
 }
 
 .jn-font-linkedin-blue {
-    color: variables.$linkedin-blue !important;
-}
-
-.jn-font-pop-blue {
-    color: variables.$pop-blue;
+  color: variables.$linkedin-blue !important;
 }
 
 /* Font size */
-.jn-font-xxl {
-    font-size: 10rem;
-}
+$custom-font-sizes: (
+  '6': 10rem, // was xxl
+  '5': 5rem, // was xl
+  '4': 4rem,
+  '3': 3.5rem, // was axl
+  '2': 2.5rem, // was l
+  '1': 1.85rem // was m
+);
 
-.jn-font-xl {
-    font-size: 5rem;
+@each $breakpoint, $value in variables.$breakpoints {
+  @each $size, $size-value in $custom-font-sizes {
+    @if ($breakpoint != 'xs') {
+      @media only screen and (min-width: $value) {
+        .#{$font-prefix}#{$breakpoint}-#{$size} {
+          font-size: map.get($custom-font-sizes, $size);
+        }
+      }
+    } @else {
+      .#{$font-prefix}#{$size} {
+        font-size: map.get($custom-font-sizes, $size);
+      }
+    }
+  }
 }
-
-.jn-font-axl {
-    font-size: 3.5rem;
-}
-
-.jn-font-l {
-    font-size: 2.5rem;
-}
-
-.jn-font-m {
-    font-size: 1.85rem;
-}
-
-/* Lists */
-.jn-no-bullets {
-    list-style-type: none;
-} 
 
 /* dividers */
 
 .divider-right {
-    position: relative;
-    padding-right: 30px;
-}
+  position: relative;
+  padding-right: 20px;
 
-.divider-right::after {
+  &::after {
     position: absolute;
     content: '';
     height: 70%;
     top: 15%;
     right: 0;
-    border: 1px solid rgba(0,0,0,0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 1px;
+  }
+}
+
+@each $breakpoint, $value in variables.$breakpoints {
+  @if ($breakpoint != 'xs') {
+    @media only screen and (min-width: $value) {
+      .divider-#{$breakpoint}-right {
+        padding-right: 20px;
+
+        &::after {
+          height: 70%;
+          top: 15%;
+        }
+      }
+    }
+  } @else {
+    .divider-right {
+      padding-right: 20px;
+
+      &::after {
+        height: 70%;
+        top: 15%;
+      }
+    }
+  }
 }
 
 /* Gutter Containers */
 
 .gutter-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .flex-gap-xsm {
-    --gap-width: 5px;
-    gap: variables.$gap-width;
+  --gap-width: 5px;
+  gap: variables.$gap-width;
 }
 
 .flex-gap-md {
-    --gap-width: 20px;
-    gap: variables.$gap-width;
-}
-
-/********************************************************************
- * Breakpoints
- *******************************************************************/
-
-/* sm */
-
-@media only screen and (min-width: 576px) {
-    .jn-font-xxl-sm {
-        font-size: 10rem;
-    }
-
-    .jn-font-xl-sm {
-        font-size: 5rem;
-    }
-
-    .jn-font-l-sm {
-        font-size: 2.5rem;
-    }
-
-    .jn-font-m-sm {
-        font-size: 1.85rem;
-    }
-}
-
-/* md */
-@media only screen and (min-width: 768px) {
-    .jn-font-xxl-md {
-        font-size: 10rem;
-    }
-
-    .jn-font-xl-md {
-        font-size: 5rem;
-    }
-
-    .jn-font-l-md {
-        font-size: 2.5rem;
-    }
-
-    .jn-font-m-md {
-        font-size: 1.85rem;
-    }
-}
-
-/* lg */
-@media only screen and (min-width: 992px) {
-    /* Font size */
-    .jn-font-xxl-lg {
-        font-size: 10rem;
-    }
-
-    .jn-font-xl-lg {
-        font-size: 5rem;
-    }
-
-    .jn-font-l-lg {
-        font-size: 2.5rem;
-    }
-
-    .jn-font-m-lg {
-        font-size: 1.85rem;
-    }
-}
-
-/* xl */
-@media only screen and (min-width: 1200px) {
-    .jn-font-xxl-xl {
-        font-size: 10rem;
-    }
-
-    .jn-font-xl-xl {
-        font-size: 5rem;
-    }
-
-    .jn-font-l-xl {
-        font-size: 2.5rem;
-    }
-
-    .jn-font-m-xl {
-        font-size: 1.85rem;
-    }
-}
-
-/* xxl */
-@media only screen and (min-width: 1400px) {
-    .jn-font-xxl-xxl {
-        font-size: 10rem;
-    }
-
-    .jn-font-xl-xxl {
-        font-size: 5rem;
-    }
-
-    .jn-font-l-xxl {
-        font-size: 2.5rem;
-    }
-
-    .jn-font-m-xxl {
-        font-size: 1.85rem;
-    }
+  --gap-width: 20px;
+  gap: variables.$gap-width;
 }
