@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import "bootstrap/dist/css/bootstrap-grid.min.css"
+import EmailForm from './EmailForm'
 
 const Contact = () => {
   return (
@@ -29,6 +30,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <EmailForm className="mt-5" />
     </div>
   )
 }
