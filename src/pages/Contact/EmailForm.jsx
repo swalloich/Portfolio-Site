@@ -42,37 +42,26 @@ export default function EmailForm({ ...props }) {
     setResult(null)
   }
 
-  if (isError) {
-    return (
-      <div {...props}>
-        <h2 className="text-center mt-5">{result}</h2>
-        <Row className="mt-3" justify="center">
-          <button className="btn btn-primary" onClick={resetForm}>Try again</button>
-        </Row>
-      </div>
-    )
-  }
-  if (isSent && !isError) {
-    return (
-      <div {...props}>
-        <h2 className="text-center mt-5">{result}</h2>
-        <Row className="mt-3" justify="center">
-          <button className="btn btn-primary" onClick={resetForm}>Send another</button>
-        </Row>
-      </div>
-    )
-  }
   return (
     <div {...props}>
       <h2>Send me an Email!</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
-        <input className="form-control mt-3" type="text" {...register("name", { required: true })} placeholder="Name" />
-        <input className="form-control mt-3" type="email" {...register("email", { required: true })} placeholder="Email" />
-        <textarea className="form-control mt-3" css={textAreaCss} {...register("message", { required: true })} placeholder="Message" />
-        <Row className="mt-3 mb-5">
-          <button className="btn btn-primary" type="submit">Send</button>
-        </Row>
-      </form>
+      {(isSent || isError) ? (
+        <div className="py-5">
+          <h3 className="text-center mt-5">{result}</h3>
+          <Row className="mt-3" justify="center">
+            <button className="btn btn-primary" onClick={resetForm}>{isError ? "Try Again" : "Send Another"}</button>
+          </Row>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
+          <input className="form-control mt-3" type="text" {...register("name", { required: true })} placeholder="Name" />
+          <input className="form-control mt-3" type="email" {...register("email", { required: true })} placeholder="Email" />
+          <textarea className="form-control mt-3" css={textAreaCss} {...register("message", { required: true })} placeholder="Message" />
+          <Row className="mt-3 mb-5">
+            <button className="btn btn-primary" type="submit">Send</button>
+          </Row>
+        </form>
+      )}
     </div>
   )
 }
