@@ -13,8 +13,7 @@ const Contact = () => {
         </div>
         <div className='col-12 col-md-4 d-flex mt-3 mt-lg-0 align-items-center jn-separator-300-start jn-separator-md-none'>
           <div className="ps-4 ps-md-1">
-            <h2 className='mt-0'>Find me at:</h2>
-            <a href="mailto:nels.jac42@gmail.com">nels.jac42@gmail.com</a>
+            <h2 className='mt-0'>Find me on:</h2>
             <div className='d-flex align-items-center mt-3'>
               <a className='d-flex align-items-center' href='https://linkedin.com/in/nelsjac42' target='_blank' rel='noreferrer'>
                 <FontAwesomeIcon className='jn-font-3 jn-font-linkedin-blue' icon={faLinkedin} />
@@ -29,6 +28,9 @@ const Contact = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='py-5'>
+        <p className="jn-font-super-light-blue text-center">or</p>
       </div>
       <EmailForm className="mt-5" />
     </div>
