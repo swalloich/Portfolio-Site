@@ -16,8 +16,8 @@ export function ProjectProvider({ children }) {
       ],
       shortDescription: "A simple and powerful site that comprehensively showcases my skills.",
       description: "- Designed a simple and powerful site to comprehensively communicate showcase my dozens of skills in a minimal number of pages. - Outlined a vision for static and functional portfolio site components to minimize development time.",
-      tags: "react,css,bootstrap,javaScript,oracleCloud,git,responsiveDesign",
-      projectStatus: "current"
+      tags: "react,css,bootstrap,javaScript,git,responsiveDesign",
+      projectStatus: "Active Maintenance"
     },
     "botwTools": {
       projectId: "botwTools",
@@ -33,9 +33,23 @@ export function ProjectProvider({ children }) {
         }
       ],
       shortDescription: "A unified toolset to assist in playing the game The Legend of Zelda: Breath of the Wild™.",
-      description: "- Built a RESTful API using Node.js and Express.js to serve data to the front end. - Designed and Constructed a front end using React.js to use the cooking and upgrade tracking tools.",
+      description: "- Developed an efficient RESTful API with sub 750ms response times using Node.js and the MVC architecture - Designed and built a responsive React app, enabling efficient use of complex systems - Tested API response times using JMeter, providing valuable project insight",
       tags: "react,rest,nodejs,expressjs,javaScript,css,git",
-      projectStatus: "current"
+      projectStatus: "In Progress"
+    },
+    "campaignAccessibilityRemediation": {
+      projectId: "campaignAccessibilityRemediation",
+      title: "Campaign Accessibility Remediation",
+      projectUrls: [
+        {
+          path: "https://www.familysearch.org/en/campaign/inspire",
+          name: "Many of these pages can be found here"
+        },
+      ],
+      shortDescription: "I meticulously went through pages owned by the FamilySearch campaigns team and solved accessibility issues.",
+      description: "- Audited and improved accessibility across dozens of web pages, resolving issues related to screen reader compatibility, semantic HTML, color contrast, and keyboard navigation - Identified and documented bugs and usability concerns during accessibility reviews, collaborating with designers and developers to implement effective fixes - Analyzed site content to flag outdated or unused pages, streamlining the team’s web presence and reducing maintenance overhead.",
+      tags: "react,html,git,javaScript,wcag",
+      projectStatus: "In Progress"
     },
     "educationSiteSearch": {
       projectId: "educationSiteSearch",
@@ -101,6 +115,7 @@ export function ProjectProvider({ children }) {
     'rest': 'REST',
     'sass': 'SASS',
     'twig': 'Twig',
+    'wcag': 'WCAG',
   }
 
   return (

@@ -24,7 +24,9 @@ const ProjectCardGrid = () => {
 
   return (
     <LayoutBand className="mt-5">
-      <Grid gap={atWidth({default: 3, sm: 4})}>
+      <h1 className="text-center">Projects</h1>
+      <p className="text-center mt-5">From streamlining performance-critical tools to enhancing web accessibility at scale, these projects reflect my commitment to thoughtful engineering and user-first design. Each one showcases a blend of technical rigor, creative problem-solving, and a passion for building things that work — and work well</p>
+      <Grid className="my-5" gap={atWidth({default: 3, sm: 4})}>
         {projectCards}
       </Grid>
     </LayoutBand>

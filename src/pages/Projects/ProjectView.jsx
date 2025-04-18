@@ -3,6 +3,7 @@ import { useParams, NavLink, Link } from 'react-router'
 import { parseDescription } from './util'
 import { LayoutBand, Tag } from "../../components"
 import { useProjectContext } from "./ProjectProvider"
+import { Helmet } from "react-helmet"
 
 const ProjectView = () => {
   const { projectId } = useParams()
@@ -11,8 +12,8 @@ const ProjectView = () => {
   const project = projects[projectId]
   let statusString = ''
   if (project?.projectStatus) {
-    if (project.projectStatus === 'current') {
-      statusString = 'Current'
+    if (project.projectStatus === 'Active Maintenance' || project.projectStatus === 'In Progress') {
+      statusString = project.projectStatus
     } else {
       const projectDate = new Date(project.projectStatus)
       const longDate = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(projectDate)
@@ -22,6 +23,10 @@ const ProjectView = () => {
 
   return (
     <LayoutBand className="mt-4">
+      <Helmet>
+        <title>{project.title} - Jacob Nelson</title>
+        <meta name="description" content={project.shortDescription} />
+      </Helmet>
       <NavLink to="/projects" className="jn-font-gray">&larr; Back to Projects</NavLink>
       <h1 className="mt-3">{project.title}</h1>
       <div className="mt-3 d-flex flex-wrap gap-2">
