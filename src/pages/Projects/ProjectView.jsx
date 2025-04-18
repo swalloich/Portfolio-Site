@@ -3,6 +3,7 @@ import { useParams, NavLink, Link } from 'react-router'
 import { parseDescription } from './util'
 import { LayoutBand, Tag } from "../../components"
 import { useProjectContext } from "./ProjectProvider"
+import { Helmet } from "react-helmet"
 
 const ProjectView = () => {
   const { projectId } = useParams()
@@ -22,6 +23,10 @@ const ProjectView = () => {
 
   return (
     <LayoutBand className="mt-4">
+      <Helmet>
+        <title>{project.title} - Jacob Nelson</title>
+        <meta name="description" content={project.shortDescription} />
+      </Helmet>
       <NavLink to="/projects" className="jn-font-gray">&larr; Back to Projects</NavLink>
       <h1 className="mt-3">{project.title}</h1>
       <div className="mt-3 d-flex flex-wrap gap-2">
