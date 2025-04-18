@@ -1,7 +1,7 @@
 import React from "react"
 import { LayoutBand } from "../components"
 
-const NotFound = () => {
+export default function NotFound() {
   return (
     <LayoutBand align="center">
       <h1 className="mt-5 mb-0 mx-auto jn-font-6">404</h1>
@@ -9,5 +9,3 @@ const NotFound = () => {
     </ LayoutBand>
   )
 }
-
-export default NotFound
