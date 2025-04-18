@@ -36,6 +36,16 @@ export default function EmailForm({ ...props }) {
     setResult(null)
   }
 
+  if (isError) {
+    return (
+      <div {...props}>
+        <h2 className="text-center mt-5">{result}</h2>
+        <Row className="mt-3" justify="center">
+          <button className="btn btn-primary" onClick={resetForm}>Try again</button>
+        </Row>
+      </div>
+    )
+  }
   if (isSent && !isError) {
     return (
       <div {...props}>
