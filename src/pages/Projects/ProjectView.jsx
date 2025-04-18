@@ -41,8 +41,8 @@ const ProjectView = () => {
           <h2>Project Links</h2>
           <ul>
             {project.projectUrls?.map((projectUrl) => (
-              <>
-                <li key={projectUrl.path}>
+              <div key={projectUrl.path}>
+                <li>
                   <Link to={projectUrl.path}>{projectUrl.name}</Link>
                 </li>
                 {projectUrl?.subPaths && (
@@ -57,7 +57,7 @@ const ProjectView = () => {
                     })}
                   </ul>
                 )}
-              </>
+              </div>
             )
             )}
           </ul>
