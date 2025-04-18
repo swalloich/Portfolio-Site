@@ -1,12 +1,17 @@
-import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import "bootstrap/dist/css/bootstrap-grid.min.css"
 import EmailForm from './EmailForm'
 
 const Contact = () => {
   return (
     <div className='container'>
+      <Helmet>
+        <title>Contact - Jacob Nelson</title>
+        <meta name="description" content="Contact Jacob Nelson, a software developer with an enthusisam for high performing software solutions." />
+      </Helmet>
       <div className='row flex-column align-items-center flex-md-row h-100 mt-2 mt-sm-5 mx-2 mx-md-0'>
         <div className='col-12 col-md-8 d-flex justify-content-end align-items-center mt-5 mt-lg-0 text-end jn-separator-300-end'>
           <h1 className='jn-font-2 jn-font-xl-4 pe-4 pe-lg-5 ms-0'>I can help bring your company's vision to life.</h1>
