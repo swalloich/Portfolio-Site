@@ -11,8 +11,8 @@ const ProjectView = () => {
   const project = projects[projectId]
   let statusString = ''
   if (project?.projectStatus) {
-    if (project.projectStatus === 'current') {
-      statusString = 'Current'
+    if (project.projectStatus === 'Active Maintenance' || project.projectStatus === 'In Progress') {
+      statusString = project.projectStatus
     } else {
       const projectDate = new Date(project.projectStatus)
       const longDate = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(projectDate)
