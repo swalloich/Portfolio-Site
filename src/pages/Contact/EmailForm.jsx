@@ -1,7 +1,13 @@
+/** @jsxImportSource @emotion/react */
 import useWeb3forms from "@web3forms/react"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { Row } from "../../components"
+import { css } from "@emotion/react"
+
+const textAreaCss = css`
+  min-height: 200px !important;
+`
 
 export default function EmailForm({ ...props }) {
   const { register, reset, handleSubmit } = useForm()
@@ -60,10 +66,10 @@ export default function EmailForm({ ...props }) {
     <div {...props}>
       <h2>Send me an Email!</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="d-flex flex-column">
-        <input className="mt-3" type="text" {...register("name", { required: true })} placeholder="Name" />
-        <input className="mt-3" type="email" {...register("email", { required: true })} placeholder="Email" />
-        <textarea className="mt-3" {...register("message", { required: true })} placeholder="Message" />
-        <Row className="mt-3">
+        <input className="form-control mt-3" type="text" {...register("name", { required: true })} placeholder="Name" />
+        <input className="form-control mt-3" type="email" {...register("email", { required: true })} placeholder="Email" />
+        <textarea className="form-control mt-3" css={textAreaCss} {...register("message", { required: true })} placeholder="Message" />
+        <Row className="mt-3 mb-5">
           <button className="btn btn-primary" type="submit">Send</button>
         </Row>
       </form>
